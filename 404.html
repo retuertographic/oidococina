@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · OídoCocina</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=DM+Sans:wght@400;700&family=JetBrains+Mono:wght@700&display=swap">
+<style>
+:root{--bg:#F5EFE4;--ink:#1C1814;--muted:#4A4238;--accent:#C2410C;--accent-d:#9A3412}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;padding:24px;text-align:center}
+.code{font-family:"JetBrains Mono",monospace;font-weight:700;color:var(--accent-d);letter-spacing:.06em}
+h1{font-family:"Fraunces",Georgia,serif;font-size:clamp(36px,7vw,60px);line-height:1.05;letter-spacing:-.02em;margin:14px 0}
+p{color:var(--muted);font-size:18px;max-width:480px;margin:0 auto}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+a{display:inline-flex;align-items:center;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none}
+.a1{background:var(--accent);color:#FFFDF8}.a2{border:1px solid var(--ink);color:var(--ink)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.en{margin-top:36px;font-size:15px}
+</style>
+</head>
+<body>
+<main>
+  <div class="code">404 · ¡NO OÍDO!</div>
+  <h1>Esta comanda no ha llegado a cocina</h1>
+  <p>La página que buscas no existe o ha cambiado de sitio.</p>
+  <div class="btns"><a class="a1" href="/">Volver al inicio</a><a class="a2" href="/#contacto">Pide una demo</a></div>
+  <p class="en" lang="en">Page not found. <a href="/?lang=en" style="padding:0;min-height:0;color:var(--accent-d);text-decoration:underline">Go to the home page</a>.</p>
+</main>
+<script>
+/* En github.io el sitio vive en /oidococina/: ajusta los enlaces absolutos */
+if (location.hostname.endsWith("github.io")) {
+  const base = "/" + location.pathname.split("/")[1] + "/";
+  document.querySelectorAll('a[href^="/"]').forEach(a => a.setAttribute("href", base + a.getAttribute("href").slice(1)));
+}
+</script>
+</body>
+</html>

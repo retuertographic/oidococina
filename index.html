@@ -1,0 +1,1152 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OídoCocina · Comandas y pantalla de cocina para pizzerías</title>
+<meta name="description" content="OídoCocina conecta sala y cocina en tiempo real: comandas desde el móvil o por voz, pantalla de cocina por bloques de horno, catálogo y pasos de preparación.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Retuerto Graphic Design">
+<meta name="theme-color" content="#C2410C">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://oidococinapp.com/">
+<link rel="alternate" hreflang="es" href="https://oidococinapp.com/">
+<link rel="alternate" hreflang="en" href="https://oidococinapp.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://oidococinapp.com/">
+<meta property="og:site_name" content="OídoCocina">
+<meta property="og:title" content="OídoCocina · Tú lo pides. Cocina dice «¡oído!»">
+<meta property="og:description" content="Comandas y pantalla de cocina en tiempo real para pizzerías.">
+<meta property="og:url" content="https://oidococinapp.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:image" content="https://oidococinapp.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OídoCocina · Tú lo pides. Cocina dice «¡oído!»">
+<meta name="twitter:description" content="Comandas y pantalla de cocina en tiempo real para pizzerías.">
+<meta name="twitter:image" content="https://oidococinapp.com/assets/og.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap">
+
+<!-- Biscotti CMP: si usas Biscotti, pega aquí el script de tu cuenta y pon CONFIG.ownCookieBanner = false (más abajo) -->
+<!-- <script src="[URL-SCRIPT-BISCOTTI]" data-id="[ID]"></script> -->
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"SoftwareApplication",
+      "name":"OídoCocina",
+      "url":"https://oidococinapp.com/",
+      "applicationCategory":"BusinessApplication",
+      "applicationSubCategory":"Kitchen Display System",
+      "operatingSystem":"Web",
+      "inLanguage":["es","en"],
+      "description":"Comandas y pantalla de cocina en tiempo real para pizzerías: comandas desde el móvil o por voz, pantalla de cocina por bloques de horno, catálogo y pasos de preparación.",
+      "offers":{"@type":"Offer","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://oidococinapp.com/#precios"},
+      "publisher":{"@type":"Organization","name":"Retuerto Graphic Design","address":{"@type":"PostalAddress","addressRegion":"Santa Cruz de Tenerife","addressCountry":"ES"}}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"¿Tengo que instalar algo o comprar equipos?","acceptedAnswer":{"@type":"Answer","text":"No. OídoCocina funciona en el navegador. Los camareros usan su móvil o una tablet y en cocina basta con una pantalla o tablet con conexión."}},
+        {"@type":"Question","name":"¿Cómo entra mi equipo?","acceptedAnswer":{"@type":"Answer","text":"Cada persona tiene su usuario y contraseña. El administrador los crea y decide qué hace cada uno: sala, cocina o gestión."}},
+        {"@type":"Question","name":"¿Sirve si no hago pizzas?","acceptedAnswer":{"@type":"Answer","text":"Está pensado para pizzerías, pero los bloques, los pasos de preparación y los modificadores se adaptan a cualquier cocina que trabaje por tandas."}},
+        {"@type":"Question","name":"¿Y si el asistente de voz no entiende algo?","acceptedAnswer":{"@type":"Answer","text":"Siempre ves la comanda antes de enviarla y puedes corregir cantidades, pizzas o modificadores a mano. Nada llega a cocina sin tu confirmación."}},
+        {"@type":"Question","name":"¿Puedo cambiar la carta en pleno servicio?","acceptedAnswer":{"@type":"Answer","text":"Sí. Si se acaba un ingrediente o una pizza, la marcas como no disponible y desaparece al momento de todos los móviles de sala."}},
+        {"@type":"Question","name":"¿Me ayudáis a cargar la carta?","acceptedAnswer":{"@type":"Answer","text":"Sí. En la puesta en marcha damos de alta pizzas, ingredientes, modificadores y pasos de preparación para que trabajes desde el primer servicio."}},
+        {"@type":"Question","name":"¿Qué pasa si se cae internet en el local?","acceptedAnswer":{"@type":"Answer","text":"OídoCocina necesita conexión para sincronizar sala y cocina. Recomendamos tener el router del local y, como respaldo, los datos móviles de un teléfono: en cuanto vuelve la conexión, todo se pone al día solo."}},
+        {"@type":"Question","name":"¿Puedo probarlo antes de decidir?","acceptedAnswer":{"@type":"Answer","text":"Sí. Te hacemos una demostración con tu propia carta cargada para que veas cómo funcionaría en tu sala y en tu cocina antes de contratar."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#F5EFE4; --bg2:#EDE4D3; --card:#FFFDF8; --ink:#1C1814; --ink2:#2A241E;
+  --muted:#4A4238; --muted2:#5E554A; --line:#E3D9C8; --line2:#D8CCB7;
+  --accent:#C2410C; --accent-d:#9A3412; --green:#2F5D3A; --amber:#FDBA74; --cream-muted:#D6CBBB;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --wrap:1200px;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3,p{margin:0}
+img{max-width:100%}
+a{color:var(--accent-d)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 40px}
+.sec{padding:104px 0}
+.sec--alt{background:var(--bg2)}
+.sec--dark{background:var(--ink);color:var(--bg)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--accent-d);margin-bottom:14px}
+.sec--dark .eyebrow{color:var(--amber)}
+.h2{font-family:var(--display);font-weight:700;font-size:clamp(34px,4.2vw,48px);line-height:1.08;letter-spacing:-.02em;max-width:780px}
+.lead{font-size:18px;color:var(--muted);max-width:640px;margin-top:16px}
+.sec--dark .lead,.sec--dark p{color:var(--cream-muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--sans)}
+.btn--accent{background:var(--accent);color:#FFFDF8}
+.btn--accent:hover{background:var(--accent-d)}
+.btn--dark{background:var(--ink);color:#FFFDF8}
+.btn--ghost{border-color:var(--ink);color:var(--ink);background:transparent;font-weight:500}
+.btn--ghost:hover{background:var(--ink);color:#FFFDF8}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(245,239,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:16px;padding-bottom:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo__mark{width:36px;height:36px;border-radius:10px;background:var(--accent);color:#FFFDF8;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:17px}
+.logo__txt{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.02em}
+.nav{display:flex;gap:26px;font-size:15px;font-weight:500}
+.nav a{color:var(--ink);text-decoration:none}
+.nav a:hover{color:var(--accent-d)}
+.hdr__act{display:flex;gap:10px;align-items:center}
+.hdr__act .btn{min-height:44px;padding:10px 18px;font-size:15px}
+.lang{display:flex;border:1px solid var(--ink);border-radius:999px;overflow:hidden}
+.lang button{background:transparent;border:0;padding:0 12px;min-height:40px;font-family:var(--mono);font-size:13px;font-weight:700;cursor:pointer;color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#FFFDF8}
+.nav .nav__m{display:none}
+.burger{display:none;background:transparent;border:1px solid var(--ink);border-radius:12px;width:44px;height:44px;cursor:pointer}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding-top:80px;padding-bottom:96px}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,6vw,72px);line-height:1.02;letter-spacing:-.03em}
+.hero p.lead{font-size:20px;margin-top:24px;max-width:540px}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.hero__note{font-size:15px;color:var(--muted2);margin-top:20px}
+.mock{display:flex;gap:20px;align-items:flex-start;justify-content:center}
+.phone{width:290px;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 24px 48px rgba(28,24,20,.12);display:flex;flex-direction:column;gap:14px;flex-shrink:0}
+.phone__top{display:flex;justify-content:space-between;align-items:baseline}
+.phone__mesa{font-family:var(--display);font-weight:700;font-size:22px}
+.pills{display:flex;gap:6px}
+.pill{padding:5px 10px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:var(--muted2)}
+.pill--on{border-color:var(--ink);color:var(--ink);font-weight:700}
+.line-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #EFE6D6;font-size:15px}
+.line-item span:last-child{font-family:var(--mono);font-size:14px}
+.mod{font-size:12px;color:var(--accent-d)}
+.total{display:flex;justify-content:space-between;align-items:baseline}
+.total strong{font-family:var(--display);font-size:28px}
+.send{padding:14px;border-radius:14px;background:var(--green);color:#FFFDF8;text-align:center;font-weight:700}
+.ticket{width:250px;margin-top:72px;background:var(--ink);color:var(--bg);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 24px 48px rgba(28,24,20,.18);flex-shrink:0}
+.ticket__top{display:flex;justify-content:space-between;align-items:center}
+.ticket__top strong{font-family:var(--display);font-size:20px}
+.ticket__time{font-family:var(--mono);font-size:13px;color:var(--amber)}
+.ticket__meta{font-family:var(--mono);font-size:12px;color:#BFB3A2}
+.bar{height:6px;border-radius:999px;background:#3A332B}
+.bar i{display:block;height:6px;border-radius:999px;background:var(--amber)}
+.step-row{display:flex;justify-content:space-between;font-size:14px}
+.ok{color:#86EFAC}.now{color:var(--amber)}
+.ticket__btn{padding:12px;border-radius:12px;background:var(--bg);color:var(--ink);text-align:center;font-weight:700;font-size:14px}
+
+/* Grids */
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:48px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:48px}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;align-items:center}
+.pain{border-top:2px solid var(--amber);padding-top:20px}
+.pain h3{font-size:20px;margin-bottom:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+.sec--alt .card{border-color:transparent}
+.card h3{font-size:19px;margin:12px 0 10px;line-height:1.3}
+.card p{font-size:15px;color:var(--muted)}
+.card svg{width:28px;height:28px;stroke:var(--accent-d);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.num{font-family:var(--mono);font-weight:700;font-size:32px;color:var(--accent)}
+.card--dark{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.card--dark p{color:var(--cream-muted)}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--accent-d)}
+.card--dark .tag{color:var(--amber)}
+
+/* Voz */
+.chat{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.chat__lbl{font-size:13px;color:var(--muted2);font-family:var(--mono)}
+.bub{max-width:88%;padding:14px 18px;font-size:16px;line-height:1.5}
+.bub--me{align-self:flex-end;background:var(--ink);color:var(--bg);border-radius:18px 18px 4px 18px}
+.bub--bot{align-self:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:18px 18px 18px 4px;font-size:15px}
+
+/* KDS */
+.kds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.kds__stat{background:var(--ink2);border-radius:18px;padding:20px}
+.kds__stat span{font-family:var(--mono);font-size:12px;color:#BFB3A2}
+.kds__stat strong{display:block;font-family:var(--display);font-size:40px}
+.kds__blk{grid-column:span 3;background:var(--ink2);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.kds__blk-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.kds__blk-top strong{font-family:var(--display);font-size:22px}
+.late{font-family:var(--mono);font-size:14px;color:#FCA5A5}
+.bar--late i{background:#F87171;width:100%}
+.kds p{font-size:14px}
+
+/* Para quien */
+.who{border-top:2px solid var(--ink);padding-top:18px}
+.who h3{font-size:19px;margin-bottom:8px}
+.who p{font-size:15px;color:var(--muted)}
+
+/* Precios */
+.plan{display:flex;flex-direction:column;gap:18px;padding:32px;border-radius:24px}
+.plan h3{font-size:22px}
+.price{font-family:var(--display);font-size:40px;font-weight:700;line-height:1.1}
+.price small{font-family:var(--sans);font-size:16px;font-weight:500;color:var(--muted2)}
+.card--dark .price small{color:#BFB3A2}
+.plan .btn{margin-top:auto;border-radius:14px}
+.badge{padding:5px 12px;border-radius:999px;background:var(--accent);color:#FFFDF8;font-size:12px;font-weight:700}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 2fr;gap:48px}
+.faq details{border-bottom:1px solid var(--line2);padding:20px 0}
+.faq summary{font-size:19px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:44px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:22px;color:var(--accent-d)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:10px;color:var(--muted)}
+
+/* Contacto */
+.contact{background:var(--accent);color:#FFFDF8}
+.contact .g2{align-items:start}
+.contact h2{font-family:var(--display);font-size:clamp(38px,5vw,56px);line-height:1.02;letter-spacing:-.03em}
+.contact p{font-size:18px;margin-top:20px}
+.contact a{color:#FFFDF8}
+.form{background:var(--card);color:var(--ink);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field--full{grid-column:1/-1}
+.field label{font-size:14px;font-weight:700}
+.field input,.field textarea{font:inherit;font-size:16px;min-height:48px;padding:10px 14px;border-radius:12px;border:1px solid #CFC3AE;background:var(--card);color:var(--ink)}
+.field textarea{min-height:110px;resize:vertical}
+.check{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted)}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--accent)}
+.check button{background:none;border:0;padding:0;color:var(--accent-d);text-decoration:underline;font:inherit;cursor:pointer}
+.form .btn{grid-column:1/-1;border-radius:14px;min-height:54px}
+.form__msg{grid-column:1/-1;font-size:15px;min-height:1.4em}
+.form__msg.ok{color:var(--green)}.form__msg.err{color:#B91C1C}
+.hp{position:absolute;left:-9999px}
+
+/* Footer */
+.ftr{background:var(--ink);color:var(--cream-muted);font-size:14px}
+.ftr__in{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:48px;padding-bottom:48px;flex-wrap:wrap}
+.ftr strong{font-family:var(--display);font-size:22px;color:var(--bg);display:block;margin-bottom:4px}
+.ftr nav{display:flex;gap:20px;flex-wrap:wrap}
+.ftr button,.ftr a{background:none;border:0;color:var(--cream-muted);font:inherit;text-decoration:underline;cursor:pointer;padding:0;min-height:44px}
+
+/* Modal legal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(28,24,20,.6);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal__box{background:var(--card);border-radius:20px;max-width:760px;width:100%;max-height:85vh;overflow:auto;padding:36px;position:relative}
+.modal__box h2{font-family:var(--display);font-size:30px;margin-bottom:16px;padding-right:48px}
+.modal__box h3{font-size:17px;margin:20px 0 6px}
+.modal__box p,.modal__box li{font-size:15px;color:var(--muted)}
+.modal__close{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-size:22px;cursor:pointer}
+.legal{display:none}.legal.on{display:block}
+html[lang="en"] .l-es{display:none}
+html[lang="es"] .l-en{display:none}
+
+/* Volver arriba */
+.totop{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:#FFFDF8;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+.totop.show{opacity:1;pointer-events:auto}
+
+/* Saltar al contenido */
+.skip{position:absolute;left:16px;top:-80px;z-index:200;background:var(--ink);color:#FFFDF8;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+.skip:focus{top:12px}
+
+/* Cabecera al hacer scroll y enlace activo */
+.hdr.scrolled{box-shadow:0 6px 24px rgba(28,24,20,.08)}
+.nav a[aria-current="true"]{color:var(--accent-d);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+
+/* Cifras del hero */
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:36px;padding-top:26px;border-top:1px solid var(--line2)}
+.hero-stats div{max-width:170px}
+.hero-stats strong{display:block;font-family:var(--display);font-size:34px;line-height:1;color:var(--accent-d)}
+.hero-stats span{display:block;margin-top:6px;font-size:14px;line-height:1.45;color:var(--muted2)}
+
+/* Franja de confianza */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card)}
+.strip__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 32px;padding-top:22px;padding-bottom:22px}
+.strip__it{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:var(--ink2)}
+.strip__it svg{width:22px;height:22px;flex-shrink:0;stroke:var(--accent-d);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Antes / después */
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:48px}
+.vs__col{border-radius:24px;padding:32px}
+.vs__col--before{background:var(--card);border:1px solid var(--line)}
+.vs__col--after{background:var(--green);color:#FFFDF8}
+.vs__col h3{font-family:var(--display);font-size:24px;margin-bottom:18px}
+.vs ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.vs li{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.5}
+.vs li::before{flex-shrink:0;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:13px;font-weight:700;margin-top:1px}
+.vs__col--before li{color:var(--muted)}
+.vs__col--before li::before{content:"✕";background:#F3E3D8;color:var(--accent-d)}
+.vs__col--after li::before{content:"✓";background:rgba(255,253,248,.18);color:#FFFDF8}
+
+/* Calculadora de hornadas */
+.calc{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;margin-top:48px;align-items:stretch}
+.calc__in{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:26px}
+.range label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:700;font-size:15px}
+.range output{font-family:var(--mono);font-size:18px;color:var(--accent-d)}
+.range input{width:100%;margin-top:10px;accent-color:var(--accent);min-height:32px}
+.calc__out{background:var(--ink);color:var(--bg);border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-content:start}
+.calc__out div{background:var(--ink2);border-radius:16px;padding:18px}
+.calc__out span{font-family:var(--mono);font-size:12px;color:#BFB3A2;display:block}
+.calc__out strong{display:block;font-family:var(--display);font-size:38px;line-height:1.1;margin-top:4px}
+.calc__out .calc__wide{grid-column:1/-1;background:transparent;padding:4px 0 0;font-size:15px;color:var(--cream-muted)}
+
+/* Proceso de alta */
+.steps{counter-reset:st;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:48px}
+.steps li{list-style:none;counter-increment:st;position:relative;padding:28px;border-radius:20px;background:var(--card);border:1px solid var(--line)}
+.steps li::before{content:counter(st,decimal-leading-zero);font-family:var(--mono);font-weight:700;font-size:14px;color:#FFFDF8;background:var(--accent);border-radius:999px;padding:4px 10px;display:inline-block;margin-bottom:12px}
+.steps h3{font-size:19px;margin-bottom:8px}
+.steps p{font-size:15px;color:var(--muted)}
+.steps ol{margin:0;padding:0}
+
+/* Bloque de contacto */
+.contact__ways{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.contact__ways a{display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:17px;text-decoration:none;min-height:44px}
+.contact__ways a:hover{text-decoration:underline}
+.contact__ways svg{width:22px;height:22px;flex-shrink:0}
+.contact__list{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-direction:column;gap:10px;font-size:16px}
+.contact__list li{display:flex;gap:10px}
+.contact__list li::before{content:"✓";font-weight:700}
+
+/* Footer ampliado */
+.ftr__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-top:56px;padding-bottom:32px}
+.ftr__grid h4{margin:0 0 12px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--amber);font-weight:700;text-transform:uppercase}
+.ftr__grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.ftr__grid p{margin-top:8px;max-width:300px}
+.ftr__grid li a,.ftr__grid li button{text-decoration:none;display:inline-flex;align-items:center}
+.ftr__grid li a:hover,.ftr__grid li button:hover{text-decoration:underline;color:var(--bg)}
+.ftr__bot{border-top:1px solid #3A332B;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;padding-bottom:28px;font-size:13px}
+
+/* Botón flotante de WhatsApp */
+.wa{position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:#1F8F4E;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px rgba(28,24,20,.25);z-index:40;transition:transform .15s}
+.wa:hover{transform:scale(1.06)}
+.wa svg{width:28px;height:28px}
+
+/* Banner de cookies */
+.cookie{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;max-width:560px;margin:0 auto;background:var(--card);color:var(--ink);border:1px solid var(--line2);border-radius:20px;padding:22px;box-shadow:0 20px 48px rgba(28,24,20,.22);display:none;flex-direction:column;gap:14px}
+.cookie.show{display:flex}
+.cookie p{font-size:14px;color:var(--muted)}
+.cookie p button{background:none;border:0;padding:0;color:var(--accent-d);text-decoration:underline;font:inherit;cursor:pointer}
+.cookie__act{display:flex;gap:10px;flex-wrap:wrap}
+.cookie__act .btn{min-height:44px;padding:10px 20px;font-size:15px;flex:1}
+
+/* Aparición suave */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* Responsive */
+@media (max-width:1080px){
+  .ftr__grid{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+  .burger{display:inline-grid;place-items:center}
+  .nav.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:16px 40px 24px;gap:14px}
+  .nav.open a{min-height:44px;display:flex;align-items:center;font-size:17px}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .hero,.g2{grid-template-columns:1fr;gap:48px}
+  .g3{grid-template-columns:1fr 1fr}
+  .faq{grid-template-columns:1fr;gap:24px}
+  .ticket{margin-top:48px}
+  .vs,.calc,.steps{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .wrap{padding-left:20px;padding-right:20px}
+  .hero{padding-top:48px;padding-bottom:72px}
+  .sec{padding:72px 0}
+  .g3,.g4{grid-template-columns:1fr}
+  .hdr__act .btn--dark{display:none}
+  .nav.open{padding:16px 20px 24px}
+  .mock{flex-direction:column;align-items:center}
+  .ticket{margin-top:0;width:290px}
+  .form{grid-template-columns:1fr;padding:24px}
+  .modal__box{padding:28px 22px}
+  .hero-stats{gap:22px}
+  .hero-stats strong{font-size:28px}
+  .calc__in,.calc__out,.vs__col{padding:24px}
+  .calc__out strong{font-size:30px}
+  .ftr__grid{grid-template-columns:1fr}
+  .lang button{padding:0 10px}
+  .hdr__act .btn--ghost{display:none}
+  .nav.open .nav__m{display:flex}
+}
+@media (max-width:400px){
+  .logo__txt{font-size:20px}
+  .hdr__act{gap:6px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a href="#inicio" class="logo" aria-label="OídoCocina, inicio">
+      <span class="logo__mark" aria-hidden="true">¡O!</span>
+      <span class="logo__txt">OídoCocina</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
+      <a href="#funciones" data-i18n="nav.features">Funciones</a>
+      <a href="#cocina" data-i18n="nav.kitchen">Pantalla de cocina</a>
+      <a href="#precios" data-i18n="nav.pricing">Precios</a>
+      <a href="#faq" data-i18n="nav.faq">Preguntas</a>
+      <a href="[URL-DE-LA-APP]" data-cfg-href="app" class="nav__m" data-i18n="nav.login">Entrar</a>
+      <a href="#contacto" class="nav__m" data-i18n="nav.demo">Pide una demo</a>
+    </nav>
+    <div class="hdr__act">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="[URL-DE-LA-APP]" data-cfg-href="app" class="btn btn--ghost" data-i18n="nav.login">Entrar</a>
+      <a href="#contacto" class="btn btn--dark" data-i18n="nav.demo">Pide una demo</a>
+      <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section id="inicio" class="wrap hero">
+  <div>
+    <p class="eyebrow" data-i18n="hero.eyebrow">Comandas y pantalla de cocina en tiempo real</p>
+    <h1 data-i18n="hero.title">Tú lo pides.<br>Cocina dice «¡oído!»</h1>
+    <p class="lead" data-i18n="hero.lead">OídoCocina conecta sala y cocina al instante. El camarero toma la comanda en el móvil —o se la dicta al asistente—, cocina la recibe ordenada en bloques de horno y tú controlas carta, tiempos y equipo desde un único panel.</p>
+    <div class="hero__cta">
+      <a href="#contacto" class="btn btn--accent" data-i18n="hero.cta1">Quiero verlo en mi local</a>
+      <a href="#como-funciona" class="btn btn--ghost" data-i18n="hero.cta2">Cómo funciona</a>
+    </div>
+    <p class="hero__note" data-i18n="hero.note">Funciona en el navegador de cualquier móvil, tablet o pantalla de cocina. Sin instalar nada.</p>
+    <div class="hero-stats">
+      <div><strong>0</strong><span data-i18n="hero.stat1">apps que instalar: todo va en el navegador</span></div>
+      <div><strong>3</strong><span data-i18n="hero.stat2">roles: encargado, sala y cocina</span></div>
+      <div><strong>4·8·12</strong><span data-i18n="hero.stat3">pizzas por bloque, a la medida de tu horno</span></div>
+    </div>
+  </div>
+
+  <div class="mock" aria-hidden="true">
+    <div class="phone">
+      <div class="phone__top"><span class="phone__mesa" data-i18n="mock.table">Mesa 5</span><span style="font-size:13px;color:var(--muted2)" data-i18n="mock.new">Nueva comanda</span></div>
+      <div class="pills"><span class="pill pill--on">Normal</span><span class="pill" data-i18n="mock.high">Alta</span><span class="pill" data-i18n="mock.urgent">Urgente</span></div>
+      <div>
+        <div class="line-item"><span>2 × BBQ Pollo</span><span>24,00 €</span></div>
+        <div class="line-item"><span data-i18n="mock.p2">Cuatro Quesos</span><span>11,50 €</span></div>
+        <div class="line-item" style="flex-direction:column;gap:4px">
+          <div style="display:flex;justify-content:space-between"><span data-i18n="mock.p3">Hawaiana</span><span style="font-family:var(--mono);font-size:14px">10,50 €</span></div>
+          <span class="mod" data-i18n="mock.mod">sin piña · extra queso</span>
+        </div>
+      </div>
+      <div class="total"><span style="color:var(--muted2);font-size:14px" data-i18n="mock.count">4 pizzas</span><strong>46,00 €</strong></div>
+      <div class="send" data-i18n="mock.send">Enviar a cocina</div>
+    </div>
+    <div class="ticket">
+      <div class="ticket__top"><strong data-i18n="mock.block">Bloque 6</strong><span class="ticket__time">11:42</span></div>
+      <div class="ticket__meta" data-i18n="mock.prep">Preparando · 3/7 pizzas</div>
+      <div class="bar"><i style="width:43%"></i></div>
+      <div class="step-row"><span data-i18n="mock.s1">Paso 1 · Salsa base</span><span class="ok" data-i18n="mock.done">hecho</span></div>
+      <div class="step-row"><span data-i18n="mock.s2">Paso 2 · Queso</span><span class="ok" data-i18n="mock.done">hecho</span></div>
+      <div class="step-row"><span data-i18n="mock.s3">Paso 3 · Carne y marisco</span><span class="now" data-i18n="mock.now">ahora</span></div>
+      <div class="ticket__btn" data-i18n="mock.complete">Completar bloque</div>
+    </div>
+  </div>
+</section>
+
+<!-- FRANJA DE CONFIANZA -->
+<div class="strip">
+  <div class="wrap strip__in">
+    <span class="strip__it"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><span data-i18n="strip.1">Móvil, tablet o pantalla</span></span>
+    <span class="strip__it"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><span data-i18n="strip.2">Sincronización en tiempo real</span></span>
+    <span class="strip__it"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span data-i18n="strip.3">Comandas por voz</span></span>
+    <span class="strip__it"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span data-i18n="strip.4">En español y en inglés</span></span>
+    <span class="strip__it"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="strip.5">Soporte desde Tenerife</span></span>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="sec sec--dark">
+  <div class="wrap">
+    <h2 class="h2" data-i18n="pain.title">Un viernes a las nueve, el problema nunca es la masa. Es lo que pasa entre la mesa y el horno.</h2>
+    <div class="g3">
+      <div class="pain"><h3 data-i18n="pain.1t">Comandas que se pierden</h3><p data-i18n="pain.1p">Papel ilegible, mesas equivocadas, un «sin cebolla» que nunca llegó. Cada error es una pizza que se tira y un cliente que espera.</p></div>
+      <div class="pain"><h3 data-i18n="pain.2t">Cocina sin orden claro</h3><p data-i18n="pain.2p">Diez tickets colgados y nadie sabe qué va primero, cuánto lleva esperando cada mesa ni qué hornada toca ahora.</p></div>
+      <div class="pain"><h3 data-i18n="pain.3t">Sala a ciegas</h3><p data-i18n="pain.3p">El camarero entra a cocina a preguntar «¿cómo va la de la cinco?». Tiempo perdido para los dos lados del pase.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="como-funciona" class="sec">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="how.eyebrow">Cómo funciona</p>
+    <h2 class="h2" data-i18n="how.title">De la mesa al horno en cuatro pasos</h2>
+    <div class="g4">
+      <div class="card"><div class="num">01</div><h3 data-i18n="how.1t">Toma la comanda</h3><p data-i18n="how.1p">Número de mesa, prioridad (Normal, Alta o Urgente) y pizzas desde el catálogo táctil con buscador. O díctalo en voz alta al asistente.</p></div>
+      <div class="card"><div class="num">02</div><h3 data-i18n="how.2t">Revisa y envía</h3><p data-i18n="how.2p">Ajusta cantidades y modificadores, comprueba el total y confirma. Si falta la mesa o no existe, la app avisa antes de mandar nada.</p></div>
+      <div class="card"><div class="num">03</div><h3 data-i18n="how.3t">Cocina en bloques</h3><p data-i18n="how.3p">Las pizzas se agrupan en bloques del tamaño de tu horno. Cada bloque muestra sus pasos de montaje y un reloj que se pone rojo si supera el tiempo objetivo.</p></div>
+      <div class="card"><div class="num">04</div><h3 data-i18n="how.4t">¡Listo para el horno!</h3><p data-i18n="how.4p">Aviso visual y sonoro en cocina, y el camarero ve en su móvil si su comanda está pendiente, en preparación o lista.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNCIONES -->
+<section id="funciones" class="sec sec--alt">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="feat.eyebrow">Funciones</p>
+    <h2 class="h2" data-i18n="feat.title">Todo lo que necesita un pase que no para</h2>
+    <div class="g3">
+      <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3 data-i18n="feat.1t">Asistente de comandas por voz</h3><p data-i18n="feat.1p">Habla o escribe como lo dirías en sala. El asistente conoce tu carta completa y convierte la frase en una comanda lista para revisar.</p></div>
+      <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><h3 data-i18n="feat.2t">Catálogo, ingredientes y modificadores</h3><p data-i18n="feat.2p">Da de alta pizzas con precio, descripción e ingredientes. Marca cuáles están disponibles y define modificadores: tamaño, extra, sin, doble de carne.</p></div>
+      <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5zM3 13l9 5 9-5"/></svg><h3 data-i18n="feat.3t">Pasos de preparación</h3><p data-i18n="feat.3p">Decide en qué orden se monta cada capa —salsa base, queso, carne y marisco…— y cocina lo verá como guía en cada bloque. Reordena, edita o desactiva pasos cuando quieras.</p></div>
+      <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3 data-i18n="feat.4t">Pantalla de cocina por bloques</h3><p data-i18n="feat.4p">Bloques en espera, en preparación y completados, con contador de pizzas del turno. Un toque para iniciar y otro para completar el bloque entero.</p></div>
+      <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg><h3 data-i18n="feat.5t">Tiempo objetivo y prioridades</h3><p data-i18n="feat.5p">Fija los minutos por bloque y elige cómo se ordena cocina: por orden de llegada o las urgentes primero.</p></div>
+      <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><h3 data-i18n="feat.6t">Todo en vivo</h3><p data-i18n="feat.6p">Sala, cocina y encargado ven lo mismo al mismo tiempo. Sin recargar ni preguntar: cada cambio aparece al instante en todos los dispositivos.</p></div>
+      <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0"/></svg><h3 data-i18n="feat.7t">Avisos sonoros</h3><p data-i18n="feat.7p">Un aviso cuando entra un pedido nuevo y otro cuando un bloque está listo para el horno. Se activa o se apaga desde Ajustes.</p></div>
+      <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg><h3 data-i18n="feat.8t">Tu equipo, cada uno en lo suyo</h3><p data-i18n="feat.8p">Cada persona entra con su usuario: el camarero ve sus comandas, cocina su pantalla y el encargado todo el local.</p></div>
+      <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><h3 data-i18n="feat.9t">Ajustes del local</h3><p data-i18n="feat.9p">Nombre, número de mesas, moneda, tamaño de bloque y tiempos. Guardas una vez y se aplica en todas las pantallas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ASISTENTE DE VOZ -->
+<section class="sec">
+  <div class="wrap g2">
+    <div>
+      <p class="eyebrow" data-i18n="voice.eyebrow">Asistente de comandas</p>
+      <h2 class="h2" data-i18n="voice.title">Dilo como en sala. Se apunta solo.</h2>
+      <p class="lead" data-i18n="voice.lead">Con las manos ocupadas o la sala llena, el camarero pulsa el micrófono y dicta. El asistente entiende mesa, cantidades, tamaños y cambios porque trabaja con tu carta real, y deja la comanda preparada para revisar y enviar.</p>
+      <p class="lead" style="font-size:16px" data-i18n="voice.lead2">¿Mucho ruido? También se puede escribir.</p>
+    </div>
+    <div class="chat">
+      <span class="chat__lbl" data-i18n="voice.lbl">Así se pide</span>
+      <div class="bub bub--me" data-i18n="voice.b1">«Mesa 5, dos margaritas y una pepperoni grande sin cebolla»</div>
+      <div class="bub bub--me" data-i18n="voice.b2">«Tres cuatro quesos con extra jalapeño para la mesa 2»</div>
+      <div class="bub bub--me" data-i18n="voice.b3">«Mesa 8: una barbacoa familiar y dos medianas de la casa»</div>
+      <div class="bub bub--bot" data-i18n="voice.b4">Mesa 8 · 1 Barbacoa (familiar) · 2 De la casa (mediana). ¿Envío a cocina?</div>
+    </div>
+  </div>
+</section>
+
+<!-- KDS -->
+<section id="cocina" class="sec sec--dark">
+  <div class="wrap g2">
+    <div class="kds" aria-hidden="true">
+      <div class="kds__stat"><span data-i18n="kds.wait">En espera</span><strong>1</strong></div>
+      <div class="kds__stat"><span data-i18n="kds.prep">Preparando</span><strong style="color:var(--amber)">1</strong></div>
+      <div class="kds__stat"><span data-i18n="kds.ready">Listos</span><strong style="color:#86EFAC">5</strong></div>
+      <div class="kds__blk">
+        <div class="kds__blk-top"><strong data-i18n="kds.blk">Bloque 7 · 8 pizzas</strong><span class="late" data-i18n="kds.late">16:05 · fuera de tiempo</span></div>
+        <div class="bar bar--late"><i></i></div>
+        <p data-i18n="kds.note">Objetivo: 15 min por bloque. Al superarlo, el bloque se marca en rojo para que nadie lo pierda de vista.</p>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow" data-i18n="kds.eyebrow">Pantalla de cocina</p>
+      <h2 class="h2" data-i18n="kds.title">Cocina trabaja por hornadas, no por papelitos</h2>
+      <p class="lead" data-i18n="kds.lead">OídoCocina agrupa las pizzas de varias comandas en bloques del tamaño que tú elijas —4, 8, 12— para aprovechar cada hornada. Cocina ve qué montar, en qué orden y cuánto lleva cada bloque.</p>
+      <p class="lead" style="font-size:16px" data-i18n="kds.lead2">Cambiar el tamaño del bloque no afecta a los que ya están en marcha: ajustas en pleno servicio sin romper nada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULADORA -->
+<section id="calculadora" class="sec sec--alt">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="calc.eyebrow">Calcula tus hornadas</p>
+    <h2 class="h2" data-i18n="calc.title">¿Cuántos bloques saca tu cocina en la hora punta?</h2>
+    <p class="lead" data-i18n="calc.lead">Mueve los valores y mira cómo se organizaría tu servicio con OídoCocina. Es una estimación orientativa: en la demo lo ajustamos con tus datos reales.</p>
+    <div class="calc">
+      <div class="calc__in">
+        <div class="range"><label for="r-pizzas"><span data-i18n="calc.pizzas">Pizzas en la hora punta</span><output id="o-pizzas" for="r-pizzas">60</output></label><input type="range" id="r-pizzas" min="10" max="200" step="5" value="60"></div>
+        <div class="range"><label for="r-block"><span data-i18n="calc.block">Pizzas por bloque (capacidad del horno)</span><output id="o-block" for="r-block">8</output></label><input type="range" id="r-block" min="2" max="16" step="1" value="8"></div>
+        <div class="range"><label for="r-min"><span data-i18n="calc.min">Minutos objetivo por bloque</span><output id="o-min" for="r-min">15</output></label><input type="range" id="r-min" min="5" max="30" step="1" value="15"></div>
+      </div>
+      <div class="calc__out" aria-live="polite">
+        <div><span data-i18n="calc.r1">Bloques por hora</span><strong id="c-blocks">8</strong></div>
+        <div><span data-i18n="calc.r2">Minutos de horno necesarios</span><strong id="c-time">120</strong></div>
+        <div><span data-i18n="calc.r3">Hornos trabajando a la vez</span><strong id="c-ovens">2</strong></div>
+        <div><span data-i18n="calc.r4">Pizzas en el último bloque</span><strong id="c-last">4</strong></div>
+        <p class="calc__wide" id="c-note"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="roles.eyebrow">Para todo el equipo</p>
+    <h2 class="h2" data-i18n="roles.title">Cada uno ve su parte del servicio</h2>
+    <div class="g3">
+      <div class="card card--dark"><span class="tag" data-i18n="roles.1tag">Encargado</span><h3 data-i18n="roles.1t">Administrador</h3><p data-i18n="roles.1p">Gestiona equipo, carta, modificadores, pasos de preparación, comandas, cocina y ajustes del local.</p></div>
+      <div class="card"><span class="tag" data-i18n="roles.2tag">Sala</span><h3 data-i18n="roles.2t">Camarero</h3><p data-i18n="roles.2p">Toma y envía comandas, usa el asistente de voz y sigue el estado de sus mesas: pendiente, en preparación o lista.</p></div>
+      <div class="card"><span class="tag" data-i18n="roles.3tag">Pase</span><h3 data-i18n="roles.3t">Cocina</h3><p data-i18n="roles.3p">Recibe los pedidos en bloques, sigue los pasos de montaje y marca cuándo cada hornada está lista.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES / DESPUÉS -->
+<section class="sec sec--alt">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="vs.eyebrow">Antes y después</p>
+    <h2 class="h2" data-i18n="vs.title">Lo que cambia en tu servicio desde el primer día</h2>
+    <div class="vs">
+      <div class="vs__col vs__col--before">
+        <h3 data-i18n="vs.bt">Con papel y a voces</h3>
+        <ul>
+          <li data-i18n="vs.b1">Tickets escritos a mano que cocina tiene que descifrar.</li>
+          <li data-i18n="vs.b2">Los cambios («sin cebolla», «extra queso») se pierden por el camino.</li>
+          <li data-i18n="vs.b3">Nadie sabe cuánto lleva esperando cada mesa.</li>
+          <li data-i18n="vs.b4">El horno sale medio vacío o se satura en la hora punta.</li>
+          <li data-i18n="vs.b5">Los camareros entran a cocina a preguntar.</li>
+        </ul>
+      </div>
+      <div class="vs__col vs__col--after">
+        <h3 data-i18n="vs.at">Con OídoCocina</h3>
+        <ul>
+          <li data-i18n="vs.a1">Comandas claras en pantalla, con mesa, prioridad y modificadores.</li>
+          <li data-i18n="vs.a2">Cada cambio llega a cocina tal cual se pidió.</li>
+          <li data-i18n="vs.a3">Reloj por bloque que se pone en rojo si se pasa de tiempo.</li>
+          <li data-i18n="vs.a4">Bloques del tamaño de tu horno para aprovechar cada hornada.</li>
+          <li data-i18n="vs.a5">Sala ve en su móvil si la comanda está en preparación o lista.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="h2" data-i18n="who.title">Pensado para cocinas con horno y prisa</h2>
+    <div class="g4">
+      <div class="who"><h3 data-i18n="who.1t">Pizzerías</h3><p data-i18n="who.1p">El flujo de bloques y capas está hecho a su medida.</p></div>
+      <div class="who"><h3 data-i18n="who.2t">Restaurantes con horno o plancha</h3><p data-i18n="who.2p">Cualquier cocina que prepare por tandas y necesite orden en el pase.</p></div>
+      <div class="who"><h3 data-i18n="who.3t">Bares con carta de pizzas</h3><p data-i18n="who.3p">Pocas manos en cocina y mucho que sacar: el orden lo pone la pantalla.</p></div>
+      <div class="who"><h3 data-i18n="who.4t">Take away y reparto</h3><p data-i18n="who.4p">Mucho volumen, poco margen de error: prioridades y tiempos a la vista.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PUESTA EN MARCHA -->
+<section id="empezar" class="sec sec--alt">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="start.eyebrow">Puesta en marcha</p>
+    <h2 class="h2" data-i18n="start.title">Funcionando en tu local en tres pasos</h2>
+    <ol class="steps">
+      <li><h3 data-i18n="start.1t">Demo con tu carta</h3><p data-i18n="start.1p">Nos cuentas cómo trabajas y te enseñamos OídoCocina con tus pizzas, tus mesas y tu horno.</p></li>
+      <li><h3 data-i18n="start.2t">Configuramos tu local</h3><p data-i18n="start.2p">Cargamos carta, modificadores y pasos de preparación, y creamos los usuarios de sala y cocina.</p></li>
+      <li><h3 data-i18n="start.3t">Primer servicio acompañado</h3><p data-i18n="start.3p">Formamos al equipo en unos minutos y estamos disponibles durante tu primer servicio por si surge algo.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios" class="sec">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="price.eyebrow">Precios</p>
+    <h2 class="h2" data-i18n="price.title">Una cuota por local, sin contar pantallas</h2>
+    <p class="lead" data-i18n="price.lead">Todos los planes incluyen comandas, pantalla de cocina, catálogo, asistente de voz y actualizaciones.</p>
+    <div class="g3">
+      <div class="plan card">
+        <h3 data-i18n="price.1t">Esencial</h3>
+        <div class="price">[PRECIO] €<small data-i18n="price.month"> /mes + impuestos</small></div>
+        <p data-i18n="price.1p">Tu local completo: usuarios de sala y cocina, pantalla por bloques y todos los ajustes.</p>
+        <a href="#contacto" class="btn btn--ghost" data-i18n="price.1b">Empezar</a>
+      </div>
+      <div class="plan card card--dark">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><h3 data-i18n="price.2t">Con puesta en marcha</h3><span class="badge" data-i18n="price.2badge">Recomendado</span></div>
+        <div class="price">[PRECIO] €<small data-i18n="price.month"> /mes + impuestos</small></div>
+        <p data-i18n="price.2p">Lo mismo, y además cargamos tu carta, configuramos los pasos de preparación y formamos a tu equipo.</p>
+        <a href="#contacto" class="btn btn--accent" data-i18n="price.2b">Hablemos</a>
+      </div>
+      <div class="plan card">
+        <h3 data-i18n="price.3t">A medida</h3>
+        <div class="price" data-i18n="price.3price">Consultar</div>
+        <p data-i18n="price.3p">Proyectos especiales: tu marca en la app, integraciones y necesidades concretas de tu cocina.</p>
+        <a href="#contacto" class="btn btn--ghost" data-i18n="price.3b">Pedir propuesta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec sec--alt">
+  <div class="wrap faq">
+    <div>
+      <p class="eyebrow" data-i18n="faq.eyebrow">Preguntas frecuentes</p>
+      <h2 class="h2" data-i18n="faq.title">Lo que nos suelen preguntar</h2>
+    </div>
+    <div>
+      <details><summary data-i18n="faq.1q">¿Tengo que instalar algo o comprar equipos?</summary><p data-i18n="faq.1a">No. OídoCocina funciona en el navegador. Los camareros usan su móvil o una tablet y en cocina basta con una pantalla o tablet con conexión.</p></details>
+      <details><summary data-i18n="faq.2q">¿Cómo entra mi equipo?</summary><p data-i18n="faq.2a">Cada persona tiene su usuario y contraseña. El administrador los crea y decide qué hace cada uno: sala, cocina o gestión.</p></details>
+      <details><summary data-i18n="faq.3q">¿Sirve si no hago pizzas?</summary><p data-i18n="faq.3a">Está pensado para pizzerías, pero los bloques, los pasos de preparación y los modificadores se adaptan a cualquier cocina que trabaje por tandas.</p></details>
+      <details><summary data-i18n="faq.4q">¿Y si el asistente de voz no entiende algo?</summary><p data-i18n="faq.4a">Siempre ves la comanda antes de enviarla y puedes corregir cantidades, pizzas o modificadores a mano. Nada llega a cocina sin tu confirmación.</p></details>
+      <details><summary data-i18n="faq.5q">¿Puedo cambiar la carta en pleno servicio?</summary><p data-i18n="faq.5a">Sí. Si se acaba un ingrediente o una pizza, la marcas como no disponible y desaparece al momento de todos los móviles de sala.</p></details>
+      <details><summary data-i18n="faq.6q">¿Me ayudáis a cargar la carta?</summary><p data-i18n="faq.6a">Sí. En la puesta en marcha damos de alta pizzas, ingredientes, modificadores y pasos de preparación para que trabajes desde el primer servicio.</p></details>
+      <details><summary data-i18n="faq.7q">¿Qué pasa si se cae internet en el local?</summary><p data-i18n="faq.7a">OídoCocina necesita conexión para sincronizar sala y cocina. Recomendamos tener el router del local y, como respaldo, los datos móviles de un teléfono: en cuanto vuelve la conexión, todo se pone al día solo.</p></details>
+      <details><summary data-i18n="faq.8q">¿Puedo probarlo antes de decidir?</summary><p data-i18n="faq.8a">Sí. Te hacemos una demostración con tu propia carta cargada para que veas cómo funcionaría en tu sala y en tu cocina antes de contratar.</p></details>
+      <details><summary data-i18n="faq.9q">¿Está en otros idiomas?</summary><p data-i18n="faq.9a">Esta web está en español y en inglés. Si tu equipo necesita trabajar en otro idioma, cuéntanoslo en la demo y lo vemos con tu caso.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="sec contact">
+  <div class="wrap g2">
+    <div>
+      <h2 data-i18n="contact.title">¿Probamos en tu próximo servicio?</h2>
+      <p data-i18n="contact.lead">Cuéntanos cómo trabaja tu cocina y te enseñamos OídoCocina funcionando con tu propia carta.</p>
+      <div class="contact__ways">
+        <a href="mailto:[EMAIL]" data-cfg-href="mailto" data-cfg-text="email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>[EMAIL]</span></a>
+        <a href="https://wa.me/[TELEFONO]" data-cfg-href="wa" target="_blank" rel="noopener"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 110.9L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg><span>WhatsApp <span data-cfg-text="phone">[TELÉFONO]</span></span></a>
+      </div>
+      <ul class="contact__list">
+        <li data-i18n="contact.l1">Respuesta en menos de 24 h laborables</li>
+        <li data-i18n="contact.l2">Demo con tu propia carta</li>
+        <li data-i18n="contact.l3">Sin compromiso</li>
+      </ul>
+    </div>
+    <form class="form" id="demoForm" novalidate>
+      <div class="field"><label for="c-nombre" data-i18n="form.name">Nombre</label><input id="c-nombre" name="nombre" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="c-rest" data-i18n="form.rest">Restaurante</label><input id="c-rest" name="restaurante" type="text" autocomplete="organization" required></div>
+      <div class="field"><label for="c-email" data-i18n="form.email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="c-tel" data-i18n="form.tel">Teléfono</label><input id="c-tel" name="telefono" type="tel" autocomplete="tel"></div>
+      <div class="field field--full"><label for="c-msg" data-i18n="form.msg">Cuéntanos tu cocina</label><textarea id="c-msg" name="mensaje" data-i18n-ph="form.msgph" placeholder="Cuántas pizzas sacáis un día fuerte, cuántos camareros sois, qué horno tenéis…"></textarea></div>
+      <input class="hp" type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="check"><input id="c-priv" type="checkbox" required><label for="c-priv"><span data-i18n="form.priv">He leído y acepto la</span> <button type="button" data-legal="privacidad" data-i18n="form.privlink">política de privacidad</button>.</label></div>
+      <button type="submit" class="btn btn--dark" data-i18n="form.send">Pedir demo</button>
+      <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__grid">
+    <div>
+      <strong>OídoCocina</strong>
+      <p data-i18n="footer.tag">Comandas y pantalla de cocina en tiempo real para pizzerías y cocinas que trabajan por hornadas.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer.h1">Producto</h4>
+      <ul>
+        <li><a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a></li>
+        <li><a href="#funciones" data-i18n="nav.features">Funciones</a></li>
+        <li><a href="#cocina" data-i18n="nav.kitchen">Pantalla de cocina</a></li>
+        <li><a href="#calculadora" data-i18n="footer.calc">Calculadora</a></li>
+        <li><a href="#precios" data-i18n="nav.pricing">Precios</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">Preguntas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.h2">Contacto</h4>
+      <ul>
+        <li><a href="mailto:[EMAIL]" data-cfg-href="mailto" data-cfg-text="email">[EMAIL]</a></li>
+        <li><a href="https://wa.me/[TELEFONO]" data-cfg-href="wa" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="#contacto" data-i18n="nav.demo">Pide una demo</a></li>
+        <li><a href="[URL-DE-LA-APP]" data-cfg-href="app" data-i18n="footer.app">Entrar en la app</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.h3">Legal</h4>
+      <ul>
+        <li><button type="button" data-legal="aviso" data-i18n="footer.legal">Aviso legal</button></li>
+        <li><button type="button" data-legal="privacidad" data-i18n="footer.privacy">Privacidad</button></li>
+        <li><button type="button" data-legal="cookies" data-i18n="footer.cookies">Cookies</button></li>
+        <li><button type="button" id="cookieSettings" data-i18n="footer.cookieset">Configurar cookies</button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ftr__bot">
+    <span>© <span id="year">2026</span> OídoCocina · <span data-i18n="footer.by">Un producto de Retuerto Graphic Design · Tenerife</span></span>
+    <span>oidococinapp.com</span>
+  </div>
+</footer>
+
+<!-- MODAL LEGAL -->
+<div class="modal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+  <div class="modal__box">
+    <button type="button" class="modal__close" id="legalClose" aria-label="Cerrar">×</button>
+
+    <div class="legal" data-doc="aviso">
+      <h2 id="legalTitle"><span class="l-es">Aviso legal</span><span class="l-en">Legal notice</span></h2>
+      <div class="l-es">
+        <p>En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de los datos del titular de este sitio web:</p>
+        <ul><li>Titular: [NOMBRE Y APELLIDOS / RAZÓN SOCIAL]</li><li>NIF: [NIF]</li><li>Domicilio: [DIRECCIÓN], Tenerife</li><li>Email: [EMAIL]</li></ul>
+        <h3>Uso del sitio</h3><p>El acceso a oidococinapp.com es gratuito y atribuye la condición de usuario, que acepta estas condiciones. El usuario se compromete a hacer un uso adecuado de los contenidos.</p>
+        <h3>Propiedad intelectual</h3><p>Los textos, diseños, logotipos y el software de OídoCocina son titularidad de [TITULAR] o de terceros que han autorizado su uso. Queda prohibida su reproducción sin autorización.</p>
+        <h3>Responsabilidad</h3><p>El titular no se hace responsable de los daños derivados de interrupciones del servicio, fallos técnicos o del uso indebido del sitio.</p>
+        <h3>Legislación aplicable</h3><p>Estas condiciones se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Santa Cruz de Tenerife.</p>
+      </div>
+      <div class="l-en">
+        <p>In accordance with Spanish Law 34/2002 (LSSI-CE), the owner of this website is:</p>
+        <ul><li>Owner: [NAME / COMPANY NAME]</li><li>Tax ID: [NIF]</li><li>Address: [ADDRESS], Tenerife, Spain</li><li>Email: [EMAIL]</li></ul>
+        <h3>Use of the site</h3><p>Access to oidococinapp.com is free and implies acceptance of these terms. Users agree to make appropriate use of the content.</p>
+        <h3>Intellectual property</h3><p>Texts, designs, logos and the OídoCocina software belong to [OWNER] or to third parties who have authorised their use. Reproduction without permission is prohibited.</p>
+        <h3>Liability</h3><p>The owner is not liable for damage arising from service interruptions, technical failures or misuse of the site.</p>
+        <h3>Governing law</h3><p>These terms are governed by Spanish law. Any dispute shall be submitted to the courts of Santa Cruz de Tenerife.</p>
+      </div>
+    </div>
+
+    <div class="legal" data-doc="privacidad">
+      <h2><span class="l-es">Política de privacidad</span><span class="l-en">Privacy policy</span></h2>
+      <div class="l-es">
+        <h3>Responsable</h3><p>[TITULAR] · NIF [NIF] · [DIRECCIÓN] · [EMAIL]</p>
+        <h3>Qué datos tratamos y para qué</h3><p>Los datos que envías en el formulario de contacto (nombre, restaurante, email, teléfono y mensaje) se usan solo para responder a tu solicitud y, si lo pides, preparar una demostración.</p>
+        <h3>Base legal</h3><p>Tu consentimiento, al marcar la casilla del formulario (art. 6.1.a RGPD).</p>
+        <h3>Conservación</h3><p>Mientras dure la relación comercial o hasta que solicites su supresión.</p>
+        <h3>Destinatarios</h3><p>No se ceden datos a terceros salvo obligación legal. El envío del formulario se gestiona con EmailJS como proveedor técnico.</p>
+        <h3>Tus derechos</h3><p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a [EMAIL]. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
+      </div>
+      <div class="l-en">
+        <h3>Controller</h3><p>[OWNER] · Tax ID [NIF] · [ADDRESS] · [EMAIL]</p>
+        <h3>What data we process and why</h3><p>The data you submit through the contact form (name, restaurant, email, phone and message) is used only to reply to your request and, if you ask, to prepare a demo.</p>
+        <h3>Legal basis</h3><p>Your consent, given by ticking the form checkbox (Art. 6.1.a GDPR).</p>
+        <h3>Retention</h3><p>For as long as the business relationship lasts or until you ask for deletion.</p>
+        <h3>Recipients</h3><p>Data is not shared with third parties unless legally required. Form delivery is handled by EmailJS as a technical provider.</p>
+        <h3>Your rights</h3><p>You can exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to [EMAIL]. You may also file a complaint with the Spanish Data Protection Agency (aepd.es).</p>
+      </div>
+    </div>
+
+    <div class="legal" data-doc="cookies">
+      <h2><span class="l-es">Política de cookies</span><span class="l-en">Cookie policy</span></h2>
+      <div class="l-es">
+        <p>Este sitio usa cookies técnicas necesarias para su funcionamiento (por ejemplo, recordar tu idioma y tu elección sobre cookies). Solo si das tu consentimiento en el banner, se activarán cookies de análisis para conocer cómo se usa la web.</p>
+        <h3>Qué guardamos</h3>
+        <ul><li><strong>oc-lang</strong> (técnica): idioma elegido. Se guarda en tu navegador hasta que lo borres.</li><li><strong>oc-cookies</strong> (técnica): tu elección sobre cookies.</li><li><strong>_ga, _ga_*</strong> (análisis, Google Analytics): solo si aceptas. Duración máxima de 2 años.</li></ul>
+        <p>Puedes cambiar tu elección en cualquier momento desde «Configurar cookies», en el pie de la página, o borrar las cookies desde la configuración de tu navegador.</p>
+      </div>
+      <div class="l-en">
+        <p>This site uses technical cookies required for it to work (for example, to remember your language and your cookie choice). Analytics cookies are only enabled if you give consent in the banner.</p>
+        <h3>What we store</h3>
+        <ul><li><strong>oc-lang</strong> (technical): your chosen language. Kept in your browser until you delete it.</li><li><strong>oc-cookies</strong> (technical): your cookie choice.</li><li><strong>_ga, _ga_*</strong> (analytics, Google Analytics): only if you accept. Up to 2 years.</li></ul>
+        <p>You can change your choice at any time from “Cookie settings” in the page footer, or delete cookies in your browser settings.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="totop" id="toTop" aria-label="Volver arriba">↑</button>
+<a class="wa" href="https://wa.me/[TELEFONO]" data-cfg-href="wa" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-i18n-aria="wa.aria"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 110.9L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+
+<!-- BANNER DE COOKIES -->
+<div class="cookie" id="cookieBanner" role="dialog" aria-live="polite" aria-labelledby="cookieTitle">
+  <strong id="cookieTitle" data-i18n="cookie.title">Cookies</strong>
+  <p><span data-i18n="cookie.text">Usamos cookies técnicas para que la web funcione y, solo si nos dejas, cookies de análisis para saber cómo se usa.</span> <button type="button" data-legal="cookies" data-i18n="cookie.more">Más información</button></p>
+  <div class="cookie__act">
+    <button type="button" class="btn btn--ghost" id="cookieReject" data-i18n="cookie.reject">Solo necesarias</button>
+    <button type="button" class="btn btn--accent" id="cookieAccept" data-i18n="cookie.accept">Aceptar todas</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+/* ===== CONFIGURACIÓN: cambia aquí tus datos y se aplican en toda la página ===== */
+const CONFIG = {
+  email: "[EMAIL]",                 // p. ej. hola@oidococinapp.com
+  phone: "[TELÉFONO]",              // como se muestra: +34 600 000 000
+  whatsapp: "[TELEFONO]",           // solo dígitos con prefijo: 34600000000
+  appUrl: "[URL-DE-LA-APP]",        // p. ej. https://app.oidococinapp.com
+  ownCookieBanner: true             // false si usas Biscotti u otro CMP
+};
+/* Analítica: se carga solo si el usuario acepta. Pega aquí tu ID de GA4 (G-XXXXXXX) o déjalo vacío. */
+const GA_ID = "";
+const EMAILJS = { publicKey: "[TU_PUBLIC_KEY]", serviceId: "[TU_SERVICE_ID]", templateId: "[TU_TEMPLATE_ID]" };
+
+const isSet = v => v && !/^\[.*\]$/.test(v);
+function applyConfig(){
+  document.querySelectorAll("[data-cfg-text]").forEach(el => { const v = CONFIG[el.dataset.cfgText]; if (isSet(v)) el.textContent = v; });
+  document.querySelectorAll("[data-cfg-href]").forEach(el => {
+    const k = el.dataset.cfgHref;
+    if (k === "mailto" && isSet(CONFIG.email)) el.href = "mailto:" + CONFIG.email;
+    if (k === "wa" && isSet(CONFIG.whatsapp)) el.href = "https://wa.me/" + CONFIG.whatsapp.replace(/\D/g, "");
+    if (k === "app" && isSet(CONFIG.appUrl)) el.href = CONFIG.appUrl;
+  });
+}
+applyConfig();
+
+/* ===== TRADUCCIONES (EN). El español está en el propio HTML ===== */
+const EN = {
+ "nav.how":"How it works","nav.features":"Features","nav.kitchen":"Kitchen screen","nav.pricing":"Pricing","nav.faq":"FAQ","nav.login":"Log in","nav.demo":"Book a demo",
+ "hero.eyebrow":"Real-time orders and kitchen display",
+ "hero.title":"You call it.<br>The kitchen says “heard!”",
+ "hero.lead":"OídoCocina links the floor and the kitchen instantly. Waiters take orders on their phone —or dictate them to the assistant—, the kitchen gets them organised in oven batches, and you manage menu, timings and staff from a single panel.",
+ "hero.cta1":"Show me in my restaurant","hero.cta2":"How it works",
+ "hero.note":"Runs in the browser of any phone, tablet or kitchen screen. Nothing to install.",
+ "hero.stat1":"apps to install: everything runs in the browser","hero.stat2":"roles: manager, floor and kitchen","hero.stat3":"pizzas per batch, sized to your oven",
+ "skip":"Skip to content",
+ "strip.1":"Phone, tablet or screen","strip.2":"Real-time sync","strip.3":"Voice ordering","strip.4":"In Spanish and English","strip.5":"Support from Tenerife",
+ "mock.table":"Table 5","mock.new":"New order","mock.high":"High","mock.urgent":"Urgent","mock.p2":"Four Cheese","mock.p3":"Hawaiian","mock.mod":"no pineapple · extra cheese","mock.count":"4 pizzas","mock.send":"Send to kitchen","mock.block":"Batch 6","mock.prep":"Preparing · 3/7 pizzas","mock.s1":"Step 1 · Base sauce","mock.s2":"Step 2 · Cheese","mock.s3":"Step 3 · Meat & seafood","mock.done":"done","mock.now":"now","mock.complete":"Complete batch",
+ "pain.title":"Friday, 9 pm: the problem is never the dough. It’s what happens between the table and the oven.",
+ "pain.1t":"Lost orders","pain.1p":"Illegible tickets, wrong tables, a “no onion” that never arrived. Every mistake is a pizza in the bin and a customer waiting.",
+ "pain.2t":"A kitchen with no clear order","pain.2p":"Ten tickets on the rail and nobody knows what goes first, how long each table has waited or which batch is next.",
+ "pain.3t":"A blind dining room","pain.3p":"The waiter walks into the kitchen to ask “how’s table five doing?”. Time lost on both sides of the pass.",
+ "how.eyebrow":"How it works","how.title":"From table to oven in four steps",
+ "how.1t":"Take the order","how.1p":"Table number, priority (Normal, High or Urgent) and pizzas from the touch menu with search. Or just say it out loud to the assistant.",
+ "how.2t":"Review and send","how.2p":"Adjust quantities and modifiers, check the total and confirm. If the table is missing or doesn’t exist, the app warns you before sending anything.",
+ "how.3t":"Cook in batches","how.3p":"Pizzas are grouped into batches sized to your oven. Each batch shows its build steps and a timer that turns red if it passes the target time.",
+ "how.4t":"Ready for the oven!","how.4p":"Visual and sound alert in the kitchen, and waiters see on their phone whether their order is pending, in progress or ready.",
+ "feat.eyebrow":"Features","feat.title":"Everything a busy pass needs",
+ "feat.1t":"Voice order assistant","feat.1p":"Speak or type the way you would on the floor. The assistant knows your full menu and turns the sentence into an order ready to review.",
+ "feat.2t":"Menu, ingredients and modifiers","feat.2p":"Add pizzas with price, description and ingredients. Mark what’s available and set modifiers: size, extra, without, double meat.",
+ "feat.3t":"Preparation steps","feat.3p":"Decide the order each layer goes on —base sauce, cheese, meat and seafood…— and the kitchen sees it as a guide in every batch. Reorder, edit or turn steps off anytime.",
+ "feat.4t":"Batch kitchen display","feat.4p":"Batches waiting, in progress and done, with a pizza counter for the shift. One tap to start, one to complete the whole batch.",
+ "feat.5t":"Target time and priorities","feat.5p":"Set the minutes per batch and choose how the kitchen is ordered: first come, first served, or urgent orders first.",
+ "feat.6t":"Everything live","feat.6p":"Floor, kitchen and manager see the same thing at the same time. No reloading, no asking: every change shows up instantly on every device.",
+ "feat.7t":"Sound alerts","feat.7p":"One alert when a new order comes in and another when a batch is ready for the oven. Turn them on or off in Settings.",
+ "feat.8t":"Your team, each on their own job","feat.8p":"Everyone logs in with their own user: waiters see their orders, the kitchen its screen, the manager the whole restaurant.",
+ "feat.9t":"Restaurant settings","feat.9p":"Name, number of tables, currency, batch size and timings. Save once and it applies on every screen.",
+ "voice.eyebrow":"Order assistant","voice.title":"Say it like on the floor. It writes itself.",
+ "voice.lead":"Hands full or a packed room? The waiter taps the mic and speaks. The assistant understands table, quantities, sizes and changes because it works with your real menu, and leaves the order ready to review and send.",
+ "voice.lead2":"Too noisy? You can type it too.","voice.lbl":"How you order",
+ "voice.b1":"“Table 5, two margheritas and a large pepperoni, no onion”","voice.b2":"“Three four cheese with extra jalapeño for table 2”","voice.b3":"“Table 8: one family BBQ and two medium house specials”","voice.b4":"Table 8 · 1 BBQ (family) · 2 House special (medium). Send to kitchen?",
+ "kds.wait":"Waiting","kds.prep":"Preparing","kds.ready":"Ready","kds.blk":"Batch 7 · 8 pizzas","kds.late":"16:05 · over time","kds.note":"Target: 15 min per batch. Once exceeded, the batch turns red so nobody loses sight of it.",
+ "kds.eyebrow":"Kitchen display","kds.title":"The kitchen works in bakes, not scraps of paper",
+ "kds.lead":"OídoCocina groups pizzas from several orders into batches of the size you choose —4, 8, 12— to make the most of every bake. The kitchen sees what to build, in what order and how long each batch has taken.",
+ "kds.lead2":"Changing the batch size doesn’t affect batches already under way: adjust mid-service without breaking anything.",
+ "calc.eyebrow":"Work out your bakes","calc.title":"How many batches does your kitchen send out at peak time?",
+ "calc.lead":"Move the values and see how your service would be organised with OídoCocina. It’s a rough estimate: in the demo we fine-tune it with your real numbers.",
+ "calc.pizzas":"Pizzas in the peak hour","calc.block":"Pizzas per batch (oven capacity)","calc.min":"Target minutes per batch",
+ "calc.r1":"Batches per hour","calc.r2":"Oven minutes needed","calc.r3":"Ovens working at once","calc.r4":"Pizzas in the last batch",
+ "vs.eyebrow":"Before and after","vs.title":"What changes in your service from day one",
+ "vs.bt":"Paper and shouting","vs.b1":"Handwritten tickets the kitchen has to decipher.","vs.b2":"Changes (“no onion”, “extra cheese”) get lost on the way.","vs.b3":"Nobody knows how long each table has been waiting.","vs.b4":"The oven goes out half empty or gets swamped at peak time.","vs.b5":"Waiters walk into the kitchen to ask.",
+ "vs.at":"With OídoCocina","vs.a1":"Clear orders on screen, with table, priority and modifiers.","vs.a2":"Every change reaches the kitchen exactly as ordered.","vs.a3":"A timer per batch that turns red if it runs over.","vs.a4":"Batches sized to your oven to make the most of every bake.","vs.a5":"The floor sees on their phone whether the order is in progress or ready.",
+ "start.eyebrow":"Onboarding","start.title":"Up and running in your restaurant in three steps",
+ "start.1t":"Demo with your menu","start.1p":"Tell us how you work and we’ll show you OídoCocina with your pizzas, your tables and your oven.",
+ "start.2t":"We set up your restaurant","start.2p":"We load your menu, modifiers and preparation steps, and create your floor and kitchen users.",
+ "start.3t":"First service with support","start.3p":"We train the team in a few minutes and stay available during your first service in case anything comes up.",
+ "roles.eyebrow":"For the whole team","roles.title":"Everyone sees their part of the service",
+ "roles.1tag":"Manager","roles.1t":"Administrator","roles.1p":"Manages staff, menu, modifiers, preparation steps, orders, kitchen and restaurant settings.",
+ "roles.2tag":"Floor","roles.2t":"Waiter","roles.2p":"Takes and sends orders, uses the voice assistant and follows the status of their tables: pending, in progress or ready.",
+ "roles.3tag":"Pass","roles.3t":"Kitchen","roles.3p":"Receives orders in batches, follows the build steps and marks when each bake is ready.",
+ "who.title":"Built for kitchens with an oven and a rush",
+ "who.1t":"Pizzerias","who.1p":"The batch-and-layer flow is made for them.",
+ "who.2t":"Restaurants with oven or grill","who.2p":"Any kitchen that cooks in rounds and needs order at the pass.",
+ "who.3t":"Bars with a pizza menu","who.3p":"Few hands in the kitchen and a lot to send out: the screen keeps the order.",
+ "who.4t":"Takeaway and delivery","who.4p":"High volume, little room for error: priorities and timings in plain sight.",
+ "price.eyebrow":"Pricing","price.title":"One fee per restaurant, however many screens",
+ "price.lead":"Every plan includes orders, kitchen display, menu, voice assistant and updates.",
+ "price.month":" /month + taxes",
+ "price.1t":"Essential","price.1p":"Your whole restaurant: floor and kitchen users, batch display and all settings.","price.1b":"Get started",
+ "price.2t":"With onboarding","price.2badge":"Recommended","price.2p":"The same, plus we load your menu, set up your preparation steps and train your team.","price.2b":"Let’s talk",
+ "price.3t":"Custom","price.3price":"On request","price.3p":"Special projects: your brand in the app, integrations and your kitchen’s specific needs.","price.3b":"Request a proposal",
+ "faq.eyebrow":"FAQ","faq.title":"What people usually ask",
+ "faq.1q":"Do I need to install anything or buy hardware?","faq.1a":"No. OídoCocina runs in the browser. Waiters use their phone or a tablet, and the kitchen just needs a connected screen or tablet.",
+ "faq.2q":"How does my team log in?","faq.2a":"Everyone has their own username and password. The administrator creates them and decides what each person does: floor, kitchen or management.",
+ "faq.3q":"Does it work if I don’t make pizza?","faq.3a":"It’s designed for pizzerias, but batches, preparation steps and modifiers adapt to any kitchen that cooks in rounds.",
+ "faq.4q":"What if the voice assistant gets something wrong?","faq.4a":"You always see the order before sending it and can fix quantities, pizzas or modifiers by hand. Nothing reaches the kitchen without your confirmation.",
+ "faq.5q":"Can I change the menu mid-service?","faq.5a":"Yes. If you run out of an ingredient or a pizza, mark it unavailable and it disappears instantly from every waiter’s phone.",
+ "faq.6q":"Will you help me load my menu?","faq.6a":"Yes. During onboarding we add your pizzas, ingredients, modifiers and preparation steps so you’re working from the first service.",
+ "faq.7q":"What if the internet goes down?","faq.7a":"OídoCocina needs a connection to keep floor and kitchen in sync. We recommend the restaurant router plus a phone’s mobile data as backup: as soon as the connection is back, everything catches up on its own.",
+ "faq.8q":"Can I try it before deciding?","faq.8a":"Yes. We’ll give you a demo with your own menu loaded so you can see how it would work on your floor and in your kitchen before signing up.",
+ "faq.9q":"Is it available in other languages?","faq.9a":"This website is in Spanish and English. If your team needs to work in another language, tell us in the demo and we’ll look at your case.",
+ "contact.l1":"Reply within 24 working hours","contact.l2":"Demo with your own menu","contact.l3":"No commitment",
+ "cookie.title":"Cookies","cookie.text":"We use technical cookies so the site works and, only if you allow it, analytics cookies to learn how it’s used.","cookie.more":"More information","cookie.reject":"Necessary only","cookie.accept":"Accept all",
+ "wa.aria":"Message us on WhatsApp",
+ "contact.title":"Shall we try it on your next service?","contact.lead":"Tell us how your kitchen works and we’ll show you OídoCocina running with your own menu.",
+ "form.name":"Name","form.rest":"Restaurant","form.email":"Email","form.tel":"Phone","form.msg":"Tell us about your kitchen",
+ "form.msgph":"How many pizzas on a busy day, how many waiters, what oven you have…",
+ "form.priv":"I have read and accept the","form.privlink":"privacy policy","form.send":"Book a demo",
+ "footer.by":"A Retuerto Graphic Design product · Tenerife","footer.legal":"Legal notice","footer.privacy":"Privacy","footer.cookies":"Cookies",
+ "footer.tag":"Real-time orders and kitchen display for pizzerias and kitchens that cook in batches.","footer.h1":"Product","footer.h2":"Contact","footer.h3":"Legal","footer.calc":"Calculator","footer.app":"Open the app","footer.cookieset":"Cookie settings"
+};
+const MSG = {
+  es:{ sending:"Enviando…", ok:"Recibido. Te escribimos en menos de 24 h laborables.", err:"No se ha podido enviar. Escríbenos a "+CONFIG.email+" o por WhatsApp.", missing:"Rellena nombre, restaurante y un email válido, y acepta la política de privacidad.", close:"Cerrar", top:"Volver arriba", menu:"Menú",
+       calcOk:n=>n<=1?"Con un solo horno llegas al objetivo en la hora punta. OídoCocina encadena los bloques y marca en rojo el que se retrase.":`Necesitas ${n} hornos trabajando a la vez para llegar en la hora punta. OídoCocina reparte las pizzas y marca en rojo el bloque que se retrase.`,
+       calcOver:"Demasiados hornos a la vez: prueba con bloques más grandes o menos minutos por bloque. En la demo lo ajustamos con tu cocina real." },
+  en:{ sending:"Sending…", ok:"Got it. We’ll reply within 24 working hours.", err:"It couldn’t be sent. Email us at "+CONFIG.email+" or message us on WhatsApp.", missing:"Fill in name, restaurant and a valid email, and accept the privacy policy.", close:"Close", top:"Back to top", menu:"Menu",
+       calcOk:n=>n<=1?"A single oven is enough to hit the target at peak time. OídoCocina chains the batches and flags any that run late in red.":`You need ${n} ovens running at once to keep up at peak time. OídoCocina spreads the pizzas and flags any batch that runs late in red.`,
+       calcOver:"That’s a lot of ovens at once: try bigger batches or fewer minutes per batch. In the demo we fine-tune it with your real kitchen." }
+};
+
+/* ===== I18N ===== */
+const ES = {}, ES_PH = {};
+document.querySelectorAll("[data-i18n]").forEach(el => { ES[el.dataset.i18n] = el.innerHTML; });
+document.querySelectorAll("[data-i18n-ph]").forEach(el => { ES_PH[el.dataset.i18nPh] = el.placeholder; });
+const ES_ARIA = {};
+document.querySelectorAll("[data-i18n-aria]").forEach(el => { ES_ARIA[el.dataset.i18nAria] = el.getAttribute("aria-label"); });
+const TITLE = { es: document.title, en: "OídoCocina · Orders and kitchen display for pizzerias" };
+const DESC = { es: document.querySelector('meta[name="description"]').content, en: "OídoCocina links floor and kitchen in real time: orders from the phone or by voice, a kitchen display by oven batches, menu and preparation steps." };
+let lang = "es";
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.dataset.i18n;
+    el.innerHTML = l === "en" ? (EN[k] ?? ES[k]) : ES[k];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => {
+    const k = el.dataset.i18nPh;
+    el.placeholder = l === "en" ? (EN[k] ?? ES_PH[k]) : ES_PH[k];
+  });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => {
+    const k = el.dataset.i18nAria;
+    el.setAttribute("aria-label", l === "en" ? (EN[k] ?? ES_ARIA[k]) : ES_ARIA[k]);
+  });
+  document.title = TITLE[l];
+  document.querySelector('meta[name="description"]').content = DESC[l];
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  document.getElementById("legalClose").setAttribute("aria-label", MSG[l].close);
+  document.getElementById("toTop").setAttribute("aria-label", MSG[l].top);
+  document.getElementById("burger").setAttribute("aria-label", MSG[l].menu);
+  try { localStorage.setItem("oc-lang", l); } catch(e){}
+  applyConfig();
+  if (window.calcReady) updateCalc();
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+/* El español es el idioma principal: solo se muestra en inglés si el visitante lo elige
+   (botón EN, que se recuerda) o si llega con ?lang=en */
+let saved = null;
+try { saved = localStorage.getItem("oc-lang"); } catch(e){}
+const qLang = new URLSearchParams(location.search).get("lang");
+if (qLang === "en" || qLang === "es") saved = qLang;
+if (saved === "en") setLang("en");
+
+/* ===== MENÚ MÓVIL ===== */
+const nav = document.getElementById("nav"), burger = document.getElementById("burger");
+burger.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open);
+});
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
+
+/* ===== MODAL LEGAL ===== */
+const modal = document.getElementById("legalModal");
+let lastFocus = null;
+function openLegal(doc){
+  lastFocus = document.activeElement;
+  modal.querySelectorAll(".legal").forEach(d => d.classList.toggle("on", d.dataset.doc === doc));
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("legalClose").focus();
+}
+function closeLegal(){
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+  if (lastFocus) lastFocus.focus();
+}
+document.querySelectorAll("[data-legal]").forEach(b => b.addEventListener("click", () => openLegal(b.dataset.legal)));
+document.getElementById("legalClose").addEventListener("click", closeLegal);
+modal.addEventListener("click", e => { if (e.target === modal) closeLegal(); });
+modal.addEventListener("keydown", e => {
+  if (e.key === "Escape") return closeLegal();
+  if (e.key !== "Tab") return;
+  const f = [...modal.querySelectorAll("button, a[href]")].filter(x => x.offsetParent !== null);
+  if (!f.length) return;
+  const first = f[0], last = f[f.length - 1];
+  if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+});
+
+/* ===== VOLVER ARRIBA Y CABECERA ===== */
+const toTop = document.getElementById("toTop"), hdr = document.querySelector(".hdr");
+function onScroll(){
+  toTop.classList.toggle("show", window.scrollY > 700);
+  hdr.classList.toggle("scrolled", window.scrollY > 8);
+}
+window.addEventListener("scroll", onScroll, { passive:true });
+onScroll();
+
+/* ===== ENLACE ACTIVO EN EL MENÚ ===== */
+const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
+if ("IntersectionObserver" in window){
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    navLinks.forEach(a => a.getAttribute("href") === "#" + en.target.id ? a.setAttribute("aria-current", "true") : a.removeAttribute("aria-current"));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  navLinks.forEach(a => { const t = document.querySelector(a.getAttribute("href")); if (t) io.observe(t); });
+
+  /* Aparición suave de tarjetas */
+  const rv = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting){ en.target.classList.add("in"); rv.unobserve(en.target); }
+  }), { threshold: .12 });
+  document.querySelectorAll(".card, .pain, .who, .vs__col, .steps li, .calc__in, .calc__out").forEach(el => { el.classList.add("reveal"); rv.observe(el); });
+}
+
+/* ===== CALCULADORA DE HORNADAS ===== */
+const rP = document.getElementById("r-pizzas"), rB = document.getElementById("r-block"), rM = document.getElementById("r-min");
+function updateCalc(){
+  const p = +rP.value, b = +rB.value, m = +rM.value;
+  document.getElementById("o-pizzas").textContent = p;
+  document.getElementById("o-block").textContent = b;
+  document.getElementById("o-min").textContent = m;
+  const blocks = Math.ceil(p / b), time = blocks * m, ovens = Math.ceil(time / 60), last = p - (blocks - 1) * b;
+  document.getElementById("c-blocks").textContent = blocks;
+  document.getElementById("c-time").textContent = time;
+  document.getElementById("c-ovens").textContent = ovens;
+  document.getElementById("c-last").textContent = last;
+  document.getElementById("c-note").textContent = ovens > 4 ? MSG[lang].calcOver : MSG[lang].calcOk(ovens);
+}
+[rP, rB, rM].forEach(r => r.addEventListener("input", updateCalc));
+window.calcReady = true;
+updateCalc();
+
+/* ===== AÑO EN EL PIE ===== */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ===== COOKIES ===== */
+const cookieBanner = document.getElementById("cookieBanner");
+function loadAnalytics(){
+  if (!GA_ID || window.gtag) return;
+  const sc = document.createElement("script");
+  sc.async = true; sc.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+  document.head.appendChild(sc);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+  gtag("js", new Date()); gtag("config", GA_ID, { anonymize_ip: true });
+}
+function setConsent(v){
+  try { localStorage.setItem("oc-cookies", v); } catch(e){}
+  cookieBanner.classList.remove("show");
+  if (v === "all") loadAnalytics();
+}
+let consent = null;
+try { consent = localStorage.getItem("oc-cookies"); } catch(e){}
+if (CONFIG.ownCookieBanner){
+  if (!consent) cookieBanner.classList.add("show");
+  else if (consent === "all") loadAnalytics();
+  document.getElementById("cookieAccept").addEventListener("click", () => setConsent("all"));
+  document.getElementById("cookieReject").addEventListener("click", () => setConsent("necessary"));
+  document.getElementById("cookieSettings").addEventListener("click", () => cookieBanner.classList.add("show"));
+} else {
+  document.getElementById("cookieSettings").parentElement.remove();
+}
+toTop.addEventListener("click", () => window.scrollTo({ top:0 }));
+
+/* ===== FORMULARIO (EmailJS) ===== */
+if (window.emailjs) emailjs.init({ publicKey: EMAILJS.publicKey });
+const form = document.getElementById("demoForm"), fmsg = document.getElementById("formMsg");
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  if (form.web.value) return; // honeypot
+  const valid = form.nombre.value.trim() && form.restaurante.value.trim() && form.email.checkValidity() && form.email.value && document.getElementById("c-priv").checked;
+  if (!valid){ fmsg.className = "form__msg err"; fmsg.textContent = MSG[lang].missing; return; }
+  const btn = form.querySelector("button[type=submit]");
+  btn.disabled = true; fmsg.className = "form__msg"; fmsg.textContent = MSG[lang].sending;
+  try {
+    await emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, {
+      nombre: form.nombre.value, restaurante: form.restaurante.value, email: form.email.value,
+      telefono: form.telefono.value, mensaje: form.mensaje.value, idioma: lang
+    });
+    fmsg.className = "form__msg ok"; fmsg.textContent = MSG[lang].ok; form.reset();
+  } catch(err){
+    fmsg.className = "form__msg err"; fmsg.textContent = MSG[lang].err;
+  } finally { btn.disabled = false; }
+});
+</script>
+</body>
+</html>
