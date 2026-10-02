@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="es" data-title-en="Page not found · OídoCocina">
+<html lang="es" data-title-en="Service unavailable · OídoCocina">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Página no encontrada · OídoCocina</title>
+<title>Servicio no disponible · OídoCocina</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#C2410C">
 <!-- Página autónoma: estilos, icono y textos en línea para que se vea bien aunque falle el resto del sitio -->
@@ -96,32 +96,23 @@ html[lang="es"] .l-en{display:none}
 <main>
   <div class="wrap err">
     <div>
-      <p class="code"><span class="l-es">Error 404 · ¡No oído!</span><span class="l-en" lang="en">Error 404 · Not heard!</span></p>
-      <h1><span class="l-es">Esta comanda no ha llegado a cocina</span><span class="l-en" lang="en">This order never reached the kitchen</span></h1>
-      <p class="lead"><span class="l-es">La página que buscas no existe, ha cambiado de sitio o el enlace está mal escrito. Vuelve al inicio y te llevamos a la mesa correcta.</span><span class="l-en" lang="en">The page you’re looking for doesn’t exist, has moved or the link is mistyped. Head back home and we’ll take you to the right table.</span></p>
+      <p class="code"><span class="l-es">Error 503 · Cocina en pausa</span><span class="l-en" lang="en">Error 503 · Kitchen on hold</span></p>
+      <h1><span class="l-es">Estamos encendiendo el horno</span><span class="l-en" lang="en">We’re firing up the oven</span></h1>
+      <p class="lead"><span class="l-es">La web no está disponible en este momento, por mantenimiento o por un problema temporal. Vuelve a intentarlo en unos minutos: lo reintentamos solos por ti.</span><span class="l-en" lang="en">The site isn’t available right now, due to maintenance or a temporary problem. Try again in a few minutes: we’ll keep retrying for you.</span></p>
       <div class="btns">
-        <a class="btn btn--accent" href="/"><span class="l-es">Volver al inicio</span><span class="l-en" lang="en">Back to home</span></a>
-        <a class="btn btn--ghost" href="/#contacto"><span class="l-es">Pide una demo</span><span class="l-en" lang="en">Book a demo</span></a>
+        <button type="button" class="btn btn--accent" id="retry"><span class="l-es">Reintentar ahora</span><span class="l-en" lang="en">Try again now</span></button>
+        <a class="btn btn--ghost" href="mailto:[EMAIL]" data-cfg="mailto"><span class="l-es">Escríbenos</span><span class="l-en" lang="en">Email us</span></a>
       </div>
-      <div class="links">
-        <p><span class="l-es">Quizá buscabas</span><span class="l-en" lang="en">Maybe you were looking for</span></p>
-        <ul>
-          <li><a href="/#como-funciona"><span class="l-es">Cómo funciona</span><span class="l-en" lang="en">How it works</span></a></li>
-          <li><a href="/#funciones"><span class="l-es">Funciones</span><span class="l-en" lang="en">Features</span></a></li>
-          <li><a href="/#cocina"><span class="l-es">Pantalla de cocina</span><span class="l-en" lang="en">Kitchen display</span></a></li>
-          <li><a href="/#precios"><span class="l-es">Precios</span><span class="l-en" lang="en">Pricing</span></a></li>
-          <li><a href="/#faq"><span class="l-es">Preguntas</span><span class="l-en" lang="en">FAQ</span></a></li>
-        </ul>
-      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
     </div>
     <div class="ticket" aria-hidden="true">
-      <div class="ticket__top"><strong><span class="l-es">Mesa 404</span><span class="l-en" lang="en">Table 404</span></strong><span class="ticket__time">--:--</span></div>
-      <div class="ticket__meta"><span class="l-es">Comanda sin destino · 0/1 pizzas</span><span class="l-en" lang="en">Order with no table · 0/1 pizzas</span></div>
-      <div class="bar"><i style="width:100%"></i></div>
-      <div class="row"><span><span class="l-es">Buscar la mesa</span><span class="l-en" lang="en">Find the table</span></span><span class="ko"><span class="l-es">no existe</span><span class="l-en" lang="en">not found</span></span></div>
-      <div class="row"><span><span class="l-es">Avisar a sala</span><span class="l-en" lang="en">Tell the floor</span></span><span class="ok"><span class="l-es">hecho</span><span class="l-en" lang="en">done</span></span></div>
-      <div class="row"><span><span class="l-es">Volver al inicio</span><span class="l-en" lang="en">Back to home</span></span><span class="now"><span class="l-es">ahora</span><span class="l-en" lang="en">now</span></span></div>
-      <div class="ticket__btn"><span class="l-es">¡Oído!</span><span class="l-en" lang="en">Heard!</span></div>
+      <div class="ticket__top"><strong><span class="l-es">Bloque 503</span><span class="l-en" lang="en">Batch 503</span></strong><span class="ticket__time"><span class="l-es">en pausa</span><span class="l-en" lang="en">on hold</span></span></div>
+      <div class="ticket__meta"><span class="l-es">Esperando al horno · 0/8 pizzas</span><span class="l-en" lang="en">Waiting for the oven · 0/8 pizzas</span></div>
+      <div class="bar"><i style="width:35%;background:var(--amber)"></i></div>
+      <div class="row"><span><span class="l-es">Paso 1 · Precalentar</span><span class="l-en" lang="en">Step 1 · Preheat</span></span><span class="now"><span class="l-es">ahora</span><span class="l-en" lang="en">now</span></span></div>
+      <div class="row"><span><span class="l-es">Paso 2 · Revisar el servicio</span><span class="l-en" lang="en">Step 2 · Check the service</span></span><span>…</span></div>
+      <div class="row"><span><span class="l-es">Paso 3 · Volver a abrir</span><span class="l-en" lang="en">Step 3 · Reopen</span></span><span>…</span></div>
+      <div class="ticket__btn"><span class="l-es">Volvemos enseguida</span><span class="l-en" lang="en">Back shortly</span></div>
     </div>
   </div>
 </main>
@@ -163,10 +154,27 @@ var CONFIG = { email: "[EMAIL]" };
   document.getElementById("year").textContent = new Date().getFullYear();
 })();
 
-/* Registra el service worker para que, en adelante, los errores de GitHub se vean con esta identidad */
-if ("serviceWorker" in navigator && location.protocol === "https:") {
-  navigator.serviceWorker.register(window.OC_BASE + "sw.js", { scope: window.OC_BASE }).catch(function(){});
-}
+/* Reintento automático: cuenta atrás y recarga la misma dirección */
+(function(){
+  var st = document.getElementById("status"), wait = 30, left = wait, timer;
+  var TXT = {
+    es:{ wait:function(s){ return "Reintentamos en " + s + " s…"; }, now:"Reintentando…", off:"Sin conexión a internet. Reintentaremos cuando vuelva." },
+    en:{ wait:function(s){ return "Retrying in " + s + " s…"; }, now:"Retrying…", off:"No internet connection. We’ll retry when it’s back." }
+  };
+  function L(){ return TXT[document.documentElement.lang] || TXT.es; }
+  function go(){ st.textContent = L().now; location.reload(); }
+  function tick(){
+    if (!navigator.onLine){ st.textContent = L().off; return; }
+    left -= 1;
+    if (left <= 0){ clearInterval(timer); go(); return; }
+    st.textContent = L().wait(left);
+  }
+  document.getElementById("retry").addEventListener("click", go);
+  window.addEventListener("online", go);
+  st.textContent = navigator.onLine ? L().wait(left) : L().off;
+  timer = setInterval(tick, 1000);
+  window.addEventListener("oc:lang", function(){ st.textContent = navigator.onLine ? L().wait(left) : L().off; });
+})();
 </script>
 </body>
 </html>

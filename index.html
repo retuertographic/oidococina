@@ -1148,5 +1148,12 @@ form.addEventListener("submit", async e => {
   } finally { btn.disabled = false; }
 });
 </script>
+
+<script>
+/* Service worker: muestra nuestras páginas de error en lugar de las de GitHub */
+if ("serviceWorker" in navigator && location.protocol === "https:") {
+  window.addEventListener("load", function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); });
+}
+</script>
 </body>
 </html>
