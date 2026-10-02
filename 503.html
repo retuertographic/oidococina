@@ -131,7 +131,7 @@ var CONFIG = { email: "[EMAIL]" };
   /* En github.io el sitio vive en /oidococina/: corrige los enlaces absolutos.
      Si la página la sirve el service worker, toma la base de su alcance. */
   var base = "/";
-  if (location.hostname.slice(-10) === "github.io") base = "/" + location.pathname.split("/")[1] + "/";
+  if (location.hostname.endsWith(".github.io")) base = "/" + location.pathname.split("/")[1] + "/";
   window.OC_BASE = base;
   document.querySelectorAll('a[href^="/"]').forEach(function(a){ a.setAttribute("href", base + a.getAttribute("href").slice(1)); });
   if (!/^\[.*\]$/.test(CONFIG.email)) document.querySelectorAll('[data-cfg="mailto"]').forEach(function(a){ a.href = "mailto:" + CONFIG.email; });
