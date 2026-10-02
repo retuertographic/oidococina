@@ -30,16 +30,16 @@ jobs:
       - name: Preparar sitio
         run: |
           mkdir _site
-          cp index.html 404.html 503.html sw.js robots.txt sitemap.xml site.webmanifest _site/
+          cp index.html 404.html no-disponible.html sw.js robots.txt sitemap.xml site.webmanifest _site/
           cp -r assets _site/
           touch _site/.nojekyll
           if [ -f CNAME ]; then cp CNAME _site/; fi
       - name: Modo mantenimiento (si existe el archivo MAINTENANCE)
         if: hashFiles('MAINTENANCE') != ''
         run: |
-          # Toda la web muestra la página 503 hasta que se borre MAINTENANCE
-          cp 503.html _site/index.html
-          cp 503.html _site/404.html
+          # Toda la web muestra la página de no disponible hasta que se borre MAINTENANCE
+          cp no-disponible.html _site/index.html
+          cp no-disponible.html _site/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

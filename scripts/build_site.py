@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera las páginas de la web a partir de las plantillas de src/.
 
-    python3 scripts/build_site.py          escribe index.html, 404.html y 503.html en la raíz
+    python3 scripts/build_site.py          escribe index.html, 404.html y no-disponible.html en la raíz
     python3 scripts/build_site.py --check  no escribe nada; falla si la raíz no está al día
 
 Cada plantilla de src/pages/ puede incluir partials de src/partials/ con un

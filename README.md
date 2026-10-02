@@ -12,7 +12,7 @@ el aviso «Generado por scripts/build_site.py»: no se editan a mano.
 ```
 src/pages/index.html             plantilla de la portada
 src/pages/404.html               plantilla de «página no encontrada»
-src/pages/503.html               plantilla de «servicio no disponible» / mantenimiento
+src/pages/no-disponible.html     plantilla de «servicio no disponible» (503) / mantenimiento
 src/partials/header.html         cabecera: saltar al contenido, logo, menú, ES/EN, Entrar, demo
 src/partials/footer.html         pie: columnas Producto / Contacto / Legal y copyright
 src/partials/legal-modal.html    aviso legal, privacidad y cookies (ES y EN)
@@ -21,10 +21,10 @@ src/partials/error-styles.html   estilos de las páginas de error (en línea, au
 src/partials/error-header.html   cabecera mínima de las páginas de error
 src/partials/error-footer.html   pie mínimo de las páginas de error
 src/partials/error-script.html   idioma, enlaces en github.io y email de las páginas de error
-scripts/build_site.py            plantillas + partials -> index.html, 404.html, 503.html
+scripts/build_site.py            plantillas + partials -> index.html, 404.html, no-disponible.html
 
-index.html, 404.html, 503.html   GENERADOS
-sw.js                            service worker: muestra 503.html si GitHub da un error 5xx/429 o no hay conexión
+index.html, 404.html, no-disponible.html   GENERADOS
+sw.js                            service worker: muestra no-disponible.html si GitHub da un error 5xx/429 o no hay conexión
 assets/                          favicon, iconos de la app y og.png (imagen para compartir en redes)
 site.webmanifest, robots.txt, sitemap.xml
 .github/workflows/pages.yml      genera y publica en GitHub Pages en cada push
@@ -71,7 +71,8 @@ Dominio propio: **Settings → Pages → Custom domain** → `oidococinapp.com` 
 ## Páginas de error
 
 - **404**: GitHub Pages sirve `404.html` para cualquier dirección que no exista.
-- **503 y errores de servidor**: GitHub Pages no permite páginas propias para errores 5xx. Para que no se vea la página de GitHub, `sw.js` (se instala en la primera visita) intercepta la navegación y, si GitHub responde 5xx o 429, o no hay conexión, muestra `503.html`.
-- Para cubrir también a quien entra por primera vez durante una caída de GitHub hace falta un proxy delante (por ejemplo Cloudflare con el dominio propio y sus páginas de error personalizadas apuntando a `503.html`).
-- **Modo mantenimiento**: crea un archivo vacío llamado `MAINTENANCE` en la raíz y haz push; toda la web mostrará la página 503. Bórralo y haz push para volver.
+- **503 y errores de servidor**: GitHub Pages no permite páginas propias para errores 5xx. Para que no se vea la página de GitHub, `sw.js` (se instala en la primera visita) intercepta la navegación y, si GitHub responde 5xx o 429, o no hay conexión, muestra `no-disponible.html`.
+- La página 503 se llama `no-disponible.html` y no `503.html` porque **GitHub Pages reserva `503.html`** y sirve allí su propia página, ignore lo que haya en el repositorio.
+- Para cubrir también a quien entra por primera vez durante una caída de GitHub hace falta un proxy delante (por ejemplo Cloudflare con el dominio propio y sus páginas de error personalizadas apuntando a `no-disponible.html`).
+- **Modo mantenimiento**: crea un archivo vacío llamado `MAINTENANCE` en la raíz y haz push; toda la web mostrará la página de no disponible (503). Bórralo y haz push para volver.
 - Los estilos de 404 y 503 se insertan en línea (partial `error-styles.html`) para que se vean bien aunque falle el resto del sitio. El email de contacto está en el `CONFIG` de `src/partials/error-script.html`.
