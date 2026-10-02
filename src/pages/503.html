@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es" data-title-en="Service unavailable · OídoCocina">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Servicio no disponible · OídoCocina</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#C2410C">
+<!-- Página autónoma: estilos, icono y textos en línea para que se vea bien aunque falle el resto del sitio -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23C2410C'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia' font-weight='700' fill='%23FFFDF8' text-anchor='middle'%3E%C2%A1O!%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<!--{{ERROR_STYLES}}-->
+</head>
+<body>
+<!--{{ERROR_HEADER}}-->
+
+<main>
+  <div class="wrap err">
+    <div>
+      <p class="code"><span class="l-es">Error 503 · Cocina en pausa</span><span class="l-en" lang="en">Error 503 · Kitchen on hold</span></p>
+      <h1><span class="l-es">Estamos encendiendo el horno</span><span class="l-en" lang="en">We’re firing up the oven</span></h1>
+      <p class="lead"><span class="l-es">La web no está disponible en este momento, por mantenimiento o por un problema temporal. Vuelve a intentarlo en unos minutos: lo reintentamos solos por ti.</span><span class="l-en" lang="en">The site isn’t available right now, due to maintenance or a temporary problem. Try again in a few minutes: we’ll keep retrying for you.</span></p>
+      <div class="btns">
+        <button type="button" class="btn btn--accent" id="retry"><span class="l-es">Reintentar ahora</span><span class="l-en" lang="en">Try again now</span></button>
+        <a class="btn btn--ghost" href="mailto:[EMAIL]" data-cfg="mailto"><span class="l-es">Escríbenos</span><span class="l-en" lang="en">Email us</span></a>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </div>
+    <div class="ticket" aria-hidden="true">
+      <div class="ticket__top"><strong><span class="l-es">Bloque 503</span><span class="l-en" lang="en">Batch 503</span></strong><span class="ticket__time"><span class="l-es">en pausa</span><span class="l-en" lang="en">on hold</span></span></div>
+      <div class="ticket__meta"><span class="l-es">Esperando al horno · 0/8 pizzas</span><span class="l-en" lang="en">Waiting for the oven · 0/8 pizzas</span></div>
+      <div class="bar"><i style="width:35%;background:var(--amber)"></i></div>
+      <div class="row"><span><span class="l-es">Paso 1 · Precalentar</span><span class="l-en" lang="en">Step 1 · Preheat</span></span><span class="now"><span class="l-es">ahora</span><span class="l-en" lang="en">now</span></span></div>
+      <div class="row"><span><span class="l-es">Paso 2 · Revisar el servicio</span><span class="l-en" lang="en">Step 2 · Check the service</span></span><span>…</span></div>
+      <div class="row"><span><span class="l-es">Paso 3 · Volver a abrir</span><span class="l-en" lang="en">Step 3 · Reopen</span></span><span>…</span></div>
+      <div class="ticket__btn"><span class="l-es">Volvemos enseguida</span><span class="l-en" lang="en">Back shortly</span></div>
+    </div>
+  </div>
+</main>
+
+<!--{{ERROR_FOOTER}}-->
+
+<!--{{ERROR_SCRIPT}}-->
+<script>
+/* Reintento automático: cuenta atrás y recarga la misma dirección */
+(function(){
+  var st = document.getElementById("status"), wait = 30, left = wait, timer;
+  var TXT = {
+    es:{ wait:function(s){ return "Reintentamos en " + s + " s…"; }, now:"Reintentando…", off:"Sin conexión a internet. Reintentaremos cuando vuelva." },
+    en:{ wait:function(s){ return "Retrying in " + s + " s…"; }, now:"Retrying…", off:"No internet connection. We’ll retry when it’s back." }
+  };
+  function L(){ return TXT[document.documentElement.lang] || TXT.es; }
+  function go(){ st.textContent = L().now; location.reload(); }
+  function tick(){
+    if (!navigator.onLine){ st.textContent = L().off; return; }
+    left -= 1;
+    if (left <= 0){ clearInterval(timer); go(); return; }
+    st.textContent = L().wait(left);
+  }
+  document.getElementById("retry").addEventListener("click", go);
+  window.addEventListener("online", go);
+  st.textContent = navigator.onLine ? L().wait(left) : L().off;
+  timer = setInterval(tick, 1000);
+  window.addEventListener("oc:lang", function(){ st.textContent = navigator.onLine ? L().wait(left) : L().off; });
+})();
+</script>
+</body>
+</html>

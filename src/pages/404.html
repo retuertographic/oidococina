@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es" data-title-en="Page not found · OídoCocina">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Página no encontrada · OídoCocina</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#C2410C">
+<!-- Página autónoma: estilos, icono y textos en línea para que se vea bien aunque falle el resto del sitio -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23C2410C'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia' font-weight='700' fill='%23FFFDF8' text-anchor='middle'%3E%C2%A1O!%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<!--{{ERROR_STYLES}}-->
+</head>
+<body>
+<!--{{ERROR_HEADER}}-->
+
+<main>
+  <div class="wrap err">
+    <div>
+      <p class="code"><span class="l-es">Error 404 · ¡No oído!</span><span class="l-en" lang="en">Error 404 · Not heard!</span></p>
+      <h1><span class="l-es">Esta comanda no ha llegado a cocina</span><span class="l-en" lang="en">This order never reached the kitchen</span></h1>
+      <p class="lead"><span class="l-es">La página que buscas no existe, ha cambiado de sitio o el enlace está mal escrito. Vuelve al inicio y te llevamos a la mesa correcta.</span><span class="l-en" lang="en">The page you’re looking for doesn’t exist, has moved or the link is mistyped. Head back home and we’ll take you to the right table.</span></p>
+      <div class="btns">
+        <a class="btn btn--accent" href="/"><span class="l-es">Volver al inicio</span><span class="l-en" lang="en">Back to home</span></a>
+        <a class="btn btn--ghost" href="/#contacto"><span class="l-es">Pide una demo</span><span class="l-en" lang="en">Book a demo</span></a>
+      </div>
+      <div class="links">
+        <p><span class="l-es">Quizá buscabas</span><span class="l-en" lang="en">Maybe you were looking for</span></p>
+        <ul>
+          <li><a href="/#como-funciona"><span class="l-es">Cómo funciona</span><span class="l-en" lang="en">How it works</span></a></li>
+          <li><a href="/#funciones"><span class="l-es">Funciones</span><span class="l-en" lang="en">Features</span></a></li>
+          <li><a href="/#cocina"><span class="l-es">Pantalla de cocina</span><span class="l-en" lang="en">Kitchen display</span></a></li>
+          <li><a href="/#precios"><span class="l-es">Precios</span><span class="l-en" lang="en">Pricing</span></a></li>
+          <li><a href="/#faq"><span class="l-es">Preguntas</span><span class="l-en" lang="en">FAQ</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ticket" aria-hidden="true">
+      <div class="ticket__top"><strong><span class="l-es">Mesa 404</span><span class="l-en" lang="en">Table 404</span></strong><span class="ticket__time">--:--</span></div>
+      <div class="ticket__meta"><span class="l-es">Comanda sin destino · 0/1 pizzas</span><span class="l-en" lang="en">Order with no table · 0/1 pizzas</span></div>
+      <div class="bar"><i style="width:100%"></i></div>
+      <div class="row"><span><span class="l-es">Buscar la mesa</span><span class="l-en" lang="en">Find the table</span></span><span class="ko"><span class="l-es">no existe</span><span class="l-en" lang="en">not found</span></span></div>
+      <div class="row"><span><span class="l-es">Avisar a sala</span><span class="l-en" lang="en">Tell the floor</span></span><span class="ok"><span class="l-es">hecho</span><span class="l-en" lang="en">done</span></span></div>
+      <div class="row"><span><span class="l-es">Volver al inicio</span><span class="l-en" lang="en">Back to home</span></span><span class="now"><span class="l-es">ahora</span><span class="l-en" lang="en">now</span></span></div>
+      <div class="ticket__btn"><span class="l-es">¡Oído!</span><span class="l-en" lang="en">Heard!</span></div>
+    </div>
+  </div>
+</main>
+
+<!--{{ERROR_FOOTER}}-->
+
+<!--{{ERROR_SCRIPT}}-->
+<script>
+/* Registra el service worker para que, en adelante, los errores de GitHub se vean con esta identidad */
+if ("serviceWorker" in navigator && location.protocol === "https:") {
+  navigator.serviceWorker.register(window.OC_BASE + "sw.js", { scope: window.OC_BASE }).catch(function(){});
+}
+</script>
+</body>
+</html>

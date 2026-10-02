@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- Generado por scripts/build_site.py desde src/pages/index.html: no se edita a mano. -->
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -387,36 +386,7 @@ html[lang="es"] .l-en{display:none}
 </style>
 </head>
 <body>
-<a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
-
-<header class="hdr">
-  <div class="wrap hdr__in">
-    <a href="#inicio" class="logo" aria-label="OídoCocina, inicio">
-      <span class="logo__mark" aria-hidden="true">¡O!</span>
-      <span class="logo__txt">OídoCocina</span>
-    </a>
-    <nav class="nav" id="nav" aria-label="Principal">
-      <a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
-      <a href="#funciones" data-i18n="nav.features">Funciones</a>
-      <a href="#cocina" data-i18n="nav.kitchen">Pantalla de cocina</a>
-      <a href="#precios" data-i18n="nav.pricing">Precios</a>
-      <a href="#faq" data-i18n="nav.faq">Preguntas</a>
-      <a href="[URL-DE-LA-APP]" data-cfg-href="app" class="nav__m" data-i18n="nav.login">Entrar</a>
-      <a href="#contacto" class="nav__m" data-i18n="nav.demo">Pide una demo</a>
-    </nav>
-    <div class="hdr__act">
-      <div class="lang" role="group" aria-label="Idioma / Language">
-        <button type="button" data-lang="es" aria-pressed="true">ES</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
-      <a href="[URL-DE-LA-APP]" data-cfg-href="app" class="btn btn--ghost" data-i18n="nav.login">Entrar</a>
-      <a href="#contacto" class="btn btn--dark" data-i18n="nav.demo">Pide una demo</a>
-      <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Menú">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
+<!--{{HEADER}}-->
 
 <main id="main">
 
@@ -736,123 +706,11 @@ html[lang="es"] .l-en{display:none}
 
 </main>
 
-<footer class="ftr">
-  <div class="wrap ftr__grid">
-    <div>
-      <strong>OídoCocina</strong>
-      <p data-i18n="footer.tag">Comandas y pantalla de cocina en tiempo real para pizzerías y cocinas que trabajan por hornadas.</p>
-    </div>
-    <div>
-      <h4 data-i18n="footer.h1">Producto</h4>
-      <ul>
-        <li><a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a></li>
-        <li><a href="#funciones" data-i18n="nav.features">Funciones</a></li>
-        <li><a href="#cocina" data-i18n="nav.kitchen">Pantalla de cocina</a></li>
-        <li><a href="#calculadora" data-i18n="footer.calc">Calculadora</a></li>
-        <li><a href="#precios" data-i18n="nav.pricing">Precios</a></li>
-        <li><a href="#faq" data-i18n="nav.faq">Preguntas</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 data-i18n="footer.h2">Contacto</h4>
-      <ul>
-        <li><a href="mailto:[EMAIL]" data-cfg-href="mailto" data-cfg-text="email">[EMAIL]</a></li>
-        <li><a href="https://wa.me/[TELEFONO]" data-cfg-href="wa" target="_blank" rel="noopener">WhatsApp</a></li>
-        <li><a href="#contacto" data-i18n="nav.demo">Pide una demo</a></li>
-        <li><a href="[URL-DE-LA-APP]" data-cfg-href="app" data-i18n="footer.app">Entrar en la app</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 data-i18n="footer.h3">Legal</h4>
-      <ul>
-        <li><button type="button" data-legal="aviso" data-i18n="footer.legal">Aviso legal</button></li>
-        <li><button type="button" data-legal="privacidad" data-i18n="footer.privacy">Privacidad</button></li>
-        <li><button type="button" data-legal="cookies" data-i18n="footer.cookies">Cookies</button></li>
-        <li><button type="button" id="cookieSettings" data-i18n="footer.cookieset">Configurar cookies</button></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrap ftr__bot">
-    <span>© <span id="year">2026</span> OídoCocina · <span data-i18n="footer.by">Un producto de Retuerto Graphic Design · Tenerife</span></span>
-    <span>oidococinapp.com</span>
-  </div>
-</footer>
+<!--{{FOOTER}}-->
 
-<!-- MODAL LEGAL -->
-<div class="modal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
-  <div class="modal__box">
-    <button type="button" class="modal__close" id="legalClose" aria-label="Cerrar">×</button>
+<!--{{LEGAL_MODAL}}-->
 
-    <div class="legal" data-doc="aviso">
-      <h2 id="legalTitle"><span class="l-es">Aviso legal</span><span class="l-en">Legal notice</span></h2>
-      <div class="l-es">
-        <p>En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de los datos del titular de este sitio web:</p>
-        <ul><li>Titular: [NOMBRE Y APELLIDOS / RAZÓN SOCIAL]</li><li>NIF: [NIF]</li><li>Domicilio: [DIRECCIÓN], Tenerife</li><li>Email: [EMAIL]</li></ul>
-        <h3>Uso del sitio</h3><p>El acceso a oidococinapp.com es gratuito y atribuye la condición de usuario, que acepta estas condiciones. El usuario se compromete a hacer un uso adecuado de los contenidos.</p>
-        <h3>Propiedad intelectual</h3><p>Los textos, diseños, logotipos y el software de OídoCocina son titularidad de [TITULAR] o de terceros que han autorizado su uso. Queda prohibida su reproducción sin autorización.</p>
-        <h3>Responsabilidad</h3><p>El titular no se hace responsable de los daños derivados de interrupciones del servicio, fallos técnicos o del uso indebido del sitio.</p>
-        <h3>Legislación aplicable</h3><p>Estas condiciones se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Santa Cruz de Tenerife.</p>
-      </div>
-      <div class="l-en">
-        <p>In accordance with Spanish Law 34/2002 (LSSI-CE), the owner of this website is:</p>
-        <ul><li>Owner: [NAME / COMPANY NAME]</li><li>Tax ID: [NIF]</li><li>Address: [ADDRESS], Tenerife, Spain</li><li>Email: [EMAIL]</li></ul>
-        <h3>Use of the site</h3><p>Access to oidococinapp.com is free and implies acceptance of these terms. Users agree to make appropriate use of the content.</p>
-        <h3>Intellectual property</h3><p>Texts, designs, logos and the OídoCocina software belong to [OWNER] or to third parties who have authorised their use. Reproduction without permission is prohibited.</p>
-        <h3>Liability</h3><p>The owner is not liable for damage arising from service interruptions, technical failures or misuse of the site.</p>
-        <h3>Governing law</h3><p>These terms are governed by Spanish law. Any dispute shall be submitted to the courts of Santa Cruz de Tenerife.</p>
-      </div>
-    </div>
-
-    <div class="legal" data-doc="privacidad">
-      <h2><span class="l-es">Política de privacidad</span><span class="l-en">Privacy policy</span></h2>
-      <div class="l-es">
-        <h3>Responsable</h3><p>[TITULAR] · NIF [NIF] · [DIRECCIÓN] · [EMAIL]</p>
-        <h3>Qué datos tratamos y para qué</h3><p>Los datos que envías en el formulario de contacto (nombre, restaurante, email, teléfono y mensaje) se usan solo para responder a tu solicitud y, si lo pides, preparar una demostración.</p>
-        <h3>Base legal</h3><p>Tu consentimiento, al marcar la casilla del formulario (art. 6.1.a RGPD).</p>
-        <h3>Conservación</h3><p>Mientras dure la relación comercial o hasta que solicites su supresión.</p>
-        <h3>Destinatarios</h3><p>No se ceden datos a terceros salvo obligación legal. El envío del formulario se gestiona con EmailJS como proveedor técnico.</p>
-        <h3>Tus derechos</h3><p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a [EMAIL]. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
-      </div>
-      <div class="l-en">
-        <h3>Controller</h3><p>[OWNER] · Tax ID [NIF] · [ADDRESS] · [EMAIL]</p>
-        <h3>What data we process and why</h3><p>The data you submit through the contact form (name, restaurant, email, phone and message) is used only to reply to your request and, if you ask, to prepare a demo.</p>
-        <h3>Legal basis</h3><p>Your consent, given by ticking the form checkbox (Art. 6.1.a GDPR).</p>
-        <h3>Retention</h3><p>For as long as the business relationship lasts or until you ask for deletion.</p>
-        <h3>Recipients</h3><p>Data is not shared with third parties unless legally required. Form delivery is handled by EmailJS as a technical provider.</p>
-        <h3>Your rights</h3><p>You can exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to [EMAIL]. You may also file a complaint with the Spanish Data Protection Agency (aepd.es).</p>
-      </div>
-    </div>
-
-    <div class="legal" data-doc="cookies">
-      <h2><span class="l-es">Política de cookies</span><span class="l-en">Cookie policy</span></h2>
-      <div class="l-es">
-        <p>Este sitio usa cookies técnicas necesarias para su funcionamiento (por ejemplo, recordar tu idioma y tu elección sobre cookies). Solo si das tu consentimiento en el banner, se activarán cookies de análisis para conocer cómo se usa la web.</p>
-        <h3>Qué guardamos</h3>
-        <ul><li><strong>oc-lang</strong> (técnica): idioma elegido. Se guarda en tu navegador hasta que lo borres.</li><li><strong>oc-cookies</strong> (técnica): tu elección sobre cookies.</li><li><strong>_ga, _ga_*</strong> (análisis, Google Analytics): solo si aceptas. Duración máxima de 2 años.</li></ul>
-        <p>Puedes cambiar tu elección en cualquier momento desde «Configurar cookies», en el pie de la página, o borrar las cookies desde la configuración de tu navegador.</p>
-      </div>
-      <div class="l-en">
-        <p>This site uses technical cookies required for it to work (for example, to remember your language and your cookie choice). Analytics cookies are only enabled if you give consent in the banner.</p>
-        <h3>What we store</h3>
-        <ul><li><strong>oc-lang</strong> (technical): your chosen language. Kept in your browser until you delete it.</li><li><strong>oc-cookies</strong> (technical): your cookie choice.</li><li><strong>_ga, _ga_*</strong> (analytics, Google Analytics): only if you accept. Up to 2 years.</li></ul>
-        <p>You can change your choice at any time from “Cookie settings” in the page footer, or delete cookies in your browser settings.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<button type="button" class="totop" id="toTop" aria-label="Volver arriba">↑</button>
-<a class="wa" href="https://wa.me/[TELEFONO]" data-cfg-href="wa" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-i18n-aria="wa.aria"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 110.9L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
-
-<!-- BANNER DE COOKIES -->
-<div class="cookie" id="cookieBanner" role="dialog" aria-live="polite" aria-labelledby="cookieTitle">
-  <strong id="cookieTitle" data-i18n="cookie.title">Cookies</strong>
-  <p><span data-i18n="cookie.text">Usamos cookies técnicas para que la web funcione y, solo si nos dejas, cookies de análisis para saber cómo se usa.</span> <button type="button" data-legal="cookies" data-i18n="cookie.more">Más información</button></p>
-  <div class="cookie__act">
-    <button type="button" class="btn btn--ghost" id="cookieReject" data-i18n="cookie.reject">Solo necesarias</button>
-    <button type="button" class="btn btn--accent" id="cookieAccept" data-i18n="cookie.accept">Aceptar todas</button>
-  </div>
-</div>
+<!--{{OVERLAYS}}-->
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>

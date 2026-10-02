@@ -25,6 +25,8 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Generar páginas desde src/ (plantillas + partials)
+        run: python3 scripts/build_site.py
       - name: Preparar sitio
         run: |
           mkdir _site

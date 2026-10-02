@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Generado por scripts/build_site.py desde src/pages/404.html: no se edita a mano. -->
 <html lang="es" data-title-en="Page not found · OídoCocina">
 <head>
 <meta charset="utf-8">
@@ -162,7 +163,8 @@ var CONFIG = { email: "[EMAIL]" };
   if (saved === "en") setLang("en");
   document.getElementById("year").textContent = new Date().getFullYear();
 })();
-
+</script>
+<script>
 /* Registra el service worker para que, en adelante, los errores de GitHub se vean con esta identidad */
 if ("serviceWorker" in navigator && location.protocol === "https:") {
   navigator.serviceWorker.register(window.OC_BASE + "sw.js", { scope: window.OC_BASE }).catch(function(){});
