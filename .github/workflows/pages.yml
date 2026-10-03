@@ -39,6 +39,8 @@ jobs:
         run: |
           # Toda la web muestra la página de no disponible hasta que se borre MAINTENANCE
           cp no-disponible.html _site/index.html
+          # Sin noindex en la portada: GitHub Pages no puede responder 503 y Google la sacaría del índice
+          sed -i 's#<meta name="robots" content="noindex, nofollow">#<meta name="robots" content="noarchive">#' _site/index.html
           cp no-disponible.html _site/404.html
       - uses: actions/upload-pages-artifact@v3
         with:

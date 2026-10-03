@@ -10,9 +10,6 @@
 <meta name="theme-color" content="#C2410C">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://oidococinapp.com/">
-<link rel="alternate" hreflang="es" href="https://oidococinapp.com/">
-<link rel="alternate" hreflang="en" href="https://oidococinapp.com/?lang=en">
-<link rel="alternate" hreflang="x-default" href="https://oidococinapp.com/">
 <meta property="og:site_name" content="OídoCocina">
 <meta property="og:title" content="OídoCocina · Tú lo pides. Cocina dice «¡oído!»">
 <meta property="og:description" content="Comandas y pantalla de cocina en tiempo real para pizzerías.">
@@ -63,7 +60,8 @@
         {"@type":"Question","name":"¿Puedo cambiar la carta en pleno servicio?","acceptedAnswer":{"@type":"Answer","text":"Sí. Si se acaba un ingrediente o una pizza, la marcas como no disponible y desaparece al momento de todos los móviles de sala."}},
         {"@type":"Question","name":"¿Me ayudáis a cargar la carta?","acceptedAnswer":{"@type":"Answer","text":"Sí. En la puesta en marcha damos de alta pizzas, ingredientes, modificadores y pasos de preparación para que trabajes desde el primer servicio."}},
         {"@type":"Question","name":"¿Qué pasa si se cae internet en el local?","acceptedAnswer":{"@type":"Answer","text":"OídoCocina necesita conexión para sincronizar sala y cocina. Recomendamos tener el router del local y, como respaldo, los datos móviles de un teléfono: en cuanto vuelve la conexión, todo se pone al día solo."}},
-        {"@type":"Question","name":"¿Puedo probarlo antes de decidir?","acceptedAnswer":{"@type":"Answer","text":"Sí. Te hacemos una demostración con tu propia carta cargada para que veas cómo funcionaría en tu sala y en tu cocina antes de contratar."}}
+        {"@type":"Question","name":"¿Puedo probarlo antes de decidir?","acceptedAnswer":{"@type":"Answer","text":"Sí. Te hacemos una demostración con tu propia carta cargada para que veas cómo funcionaría en tu sala y en tu cocina antes de contratar."}},
+        {"@type":"Question","name":"¿Está en otros idiomas?","acceptedAnswer":{"@type":"Answer","text":"Esta web está en español y en inglés. Si tu equipo necesita trabajar en otro idioma, cuéntanoslo en la demo y lo vemos con tu caso."}}
       ]
     }
   ]
@@ -290,7 +288,8 @@ html[lang="es"] .l-en{display:none}
 /* Calculadora de hornadas */
 .calc{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;margin-top:48px;align-items:stretch}
 .calc__in{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:26px}
-.range label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:700;font-size:15px}
+.range__top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.range label{font-weight:700;font-size:15px}
 .range output{font-family:var(--mono);font-size:18px;color:var(--accent-d)}
 .range input{width:100%;margin-top:10px;accent-color:var(--accent);min-height:32px}
 .calc__out{background:var(--ink);color:var(--bg);border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-content:start}
@@ -318,7 +317,7 @@ html[lang="es"] .l-en{display:none}
 
 /* Footer ampliado */
 .ftr__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-top:56px;padding-bottom:32px}
-.ftr__grid h4{margin:0 0 12px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--amber);font-weight:700;text-transform:uppercase}
+.ftr__grid .ftr__h{margin:0 0 12px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--amber);font-weight:700;text-transform:uppercase}
 .ftr__grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
 .ftr__grid p{margin-top:8px;max-width:300px}
 .ftr__grid li a,.ftr__grid li button{text-decoration:none;display:inline-flex;align-items:center}
@@ -540,9 +539,9 @@ html[lang="es"] .l-en{display:none}
     <p class="lead" data-i18n="calc.lead">Mueve los valores y mira cómo se organizaría tu servicio con OídoCocina. Es una estimación orientativa: en la demo lo ajustamos con tus datos reales.</p>
     <div class="calc">
       <div class="calc__in">
-        <div class="range"><label for="r-pizzas"><span data-i18n="calc.pizzas">Pizzas en la hora punta</span><output id="o-pizzas" for="r-pizzas">60</output></label><input type="range" id="r-pizzas" min="10" max="200" step="5" value="60"></div>
-        <div class="range"><label for="r-block"><span data-i18n="calc.block">Pizzas por bloque (capacidad del horno)</span><output id="o-block" for="r-block">8</output></label><input type="range" id="r-block" min="2" max="16" step="1" value="8"></div>
-        <div class="range"><label for="r-min"><span data-i18n="calc.min">Minutos objetivo por bloque</span><output id="o-min" for="r-min">15</output></label><input type="range" id="r-min" min="5" max="30" step="1" value="15"></div>
+        <div class="range"><div class="range__top"><label for="r-pizzas" data-i18n="calc.pizzas">Pizzas en la hora punta</label><output id="o-pizzas" for="r-pizzas">60</output></div><input type="range" id="r-pizzas" min="10" max="200" step="5" value="60"></div>
+        <div class="range"><div class="range__top"><label for="r-block" data-i18n="calc.block">Pizzas por bloque (capacidad del horno)</label><output id="o-block" for="r-block">8</output></div><input type="range" id="r-block" min="2" max="16" step="1" value="8"></div>
+        <div class="range"><div class="range__top"><label for="r-min" data-i18n="calc.min">Minutos objetivo por bloque</label><output id="o-min" for="r-min">15</output></div><input type="range" id="r-min" min="5" max="30" step="1" value="15"></div>
       </div>
       <div class="calc__out" aria-live="polite">
         <div><span data-i18n="calc.r1">Bloques por hora</span><strong id="c-blocks">8</strong></div>
@@ -697,7 +696,7 @@ html[lang="es"] .l-en{display:none}
       <div class="field"><label for="c-tel" data-i18n="form.tel">Teléfono</label><input id="c-tel" name="telefono" type="tel" autocomplete="tel"></div>
       <div class="field field--full"><label for="c-msg" data-i18n="form.msg">Cuéntanos tu cocina</label><textarea id="c-msg" name="mensaje" data-i18n-ph="form.msgph" placeholder="Cuántas pizzas sacáis un día fuerte, cuántos camareros sois, qué horno tenéis…"></textarea></div>
       <input class="hp" type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="check"><input id="c-priv" type="checkbox" required><label for="c-priv"><span data-i18n="form.priv">He leído y acepto la</span> <button type="button" data-legal="privacidad" data-i18n="form.privlink">política de privacidad</button>.</label></div>
+      <div class="check"><input id="c-priv" type="checkbox" required aria-labelledby="c-priv-t c-priv-l"><span><label for="c-priv" id="c-priv-t" data-i18n="form.priv">He leído y acepto la</label> <button type="button" id="c-priv-l" data-legal="privacidad" data-i18n="form.privlink">política de privacidad</button>.</span></div>
       <button type="submit" class="btn btn--dark" data-i18n="form.send">Pedir demo</button>
       <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
     </form>
@@ -824,10 +823,10 @@ const EN = {
  "footer.tag":"Real-time orders and kitchen display for pizzerias and kitchens that cook in batches.","footer.h1":"Product","footer.h2":"Contact","footer.h3":"Legal","footer.calc":"Calculator","footer.app":"Open the app","footer.cookieset":"Cookie settings"
 };
 const MSG = {
-  es:{ sending:"Enviando…", ok:"Recibido. Te escribimos en menos de 24 h laborables.", err:"No se ha podido enviar. Escríbenos a "+CONFIG.email+" o por WhatsApp.", missing:"Rellena nombre, restaurante y un email válido, y acepta la política de privacidad.", close:"Cerrar", top:"Volver arriba", menu:"Menú",
+  es:{ sending:"Enviando…", mail:"Se ha abierto tu correo con la solicitud: solo falta pulsar Enviar.", ok:"Recibido. Te escribimos en menos de 24 h laborables.", err:"No se ha podido enviar. Escríbenos a "+CONFIG.email+" o por WhatsApp.", missing:"Rellena nombre, restaurante y un email válido, y acepta la política de privacidad.", close:"Cerrar", top:"Volver arriba", menu:"Menú",
        calcOk:n=>n<=1?"Con un solo horno llegas al objetivo en la hora punta. OídoCocina encadena los bloques y marca en rojo el que se retrase.":`Necesitas ${n} hornos trabajando a la vez para llegar en la hora punta. OídoCocina reparte las pizzas y marca en rojo el bloque que se retrase.`,
        calcOver:"Demasiados hornos a la vez: prueba con bloques más grandes o menos minutos por bloque. En la demo lo ajustamos con tu cocina real." },
-  en:{ sending:"Sending…", ok:"Got it. We’ll reply within 24 working hours.", err:"It couldn’t be sent. Email us at "+CONFIG.email+" or message us on WhatsApp.", missing:"Fill in name, restaurant and a valid email, and accept the privacy policy.", close:"Close", top:"Back to top", menu:"Menu",
+  en:{ sending:"Sending…", mail:"Your email app has opened with the request: just press Send.", ok:"Got it. We’ll reply within 24 working hours.", err:"It couldn’t be sent. Email us at "+CONFIG.email+" or message us on WhatsApp.", missing:"Fill in name, restaurant and a valid email, and accept the privacy policy.", close:"Close", top:"Back to top", menu:"Menu",
        calcOk:n=>n<=1?"A single oven is enough to hit the target at peak time. OídoCocina chains the batches and flags any that run late in red.":`You need ${n} ovens running at once to keep up at peak time. OídoCocina spreads the pizzas and flags any batch that runs late in red.`,
        calcOver:"That’s a lot of ovens at once: try bigger batches or fewer minutes per batch. In the demo we fine-tune it with your real kitchen." }
 };
@@ -996,11 +995,19 @@ form.addEventListener("submit", async e => {
   if (!valid){ fmsg.className = "form__msg err"; fmsg.textContent = MSG[lang].missing; return; }
   const btn = form.querySelector("button[type=submit]");
   btn.disabled = true; fmsg.className = "form__msg"; fmsg.textContent = MSG[lang].sending;
+  const data = { nombre: form.nombre.value, restaurante: form.restaurante.value, email: form.email.value,
+                 telefono: form.telefono.value, mensaje: form.mensaje.value, idioma: lang };
+  const keysOk = window.emailjs && isSet(EMAILJS.publicKey) && isSet(EMAILJS.serviceId) && isSet(EMAILJS.templateId);
   try {
-    await emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, {
-      nombre: form.nombre.value, restaurante: form.restaurante.value, email: form.email.value,
-      telefono: form.telefono.value, mensaje: form.mensaje.value, idioma: lang
-    });
+    if (!keysOk) {
+      // Sin EmailJS configurado: abre el correo del visitante con la solicitud ya escrita
+      if (!isSet(CONFIG.email)) throw new Error("sin email de contacto");
+      const body = Object.entries(data).map(([k, v]) => k + ": " + v).join("\n");
+      location.href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Demo OídoCocina · " + data.restaurante) + "&body=" + encodeURIComponent(body);
+      fmsg.className = "form__msg ok"; fmsg.textContent = MSG[lang].mail;
+      return;
+    }
+    await emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, data);
     fmsg.className = "form__msg ok"; fmsg.textContent = MSG[lang].ok; form.reset();
   } catch(err){
     fmsg.className = "form__msg err"; fmsg.textContent = MSG[lang].err;

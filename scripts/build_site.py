@@ -3,6 +3,7 @@
 
     python3 scripts/build_site.py          escribe index.html, 404.html y no-disponible.html en la raíz
     python3 scripts/build_site.py --check  no escribe nada; falla si la raíz no está al día
+    python3 scripts/build_site.py --strict además falla si quedan datos sin rellenar ([EMAIL], [NIF]…)
 
 Cada plantilla de src/pages/ puede incluir partials de src/partials/ con un
 marcador <!--{{NOMBRE}}-->: {{HEADER}} carga header.html, {{LEGAL_MODAL}}
@@ -30,6 +31,8 @@ PAGE_VARS = {
 
 MARKER = re.compile(r"<!--\{\{([A-Z0-9_]+)\}\}-->")
 VAR = re.compile(r"\{\{([A-Z0-9_]+)\}\}")
+# Datos de ejemplo que no deben publicarse: se avisa siempre y --strict impide publicar
+PLACEHOLDER = re.compile(r"\[(?:EMAIL|TEL[EÉ]FONO|PRECIO|NIF|TITULAR|DIRECCI[OÓ]N|URL-DE-LA-APP|TU_[A-Z_]+|NOMBRE[^\]]*|NAME[^\]]*|OWNER|ADDRESS)\]")
 BANNER = "<!-- Generado por scripts/build_site.py desde src/pages/{name}: no se edita a mano. -->\n"
 
 
@@ -62,10 +65,14 @@ def render(src: Path) -> str:
 
 def main() -> None:
     check = "--check" in sys.argv[1:]
-    stale = []
+    strict = "--strict" in sys.argv[1:]
+    stale, pending = [], {}
     for src in sorted(PAGES.glob("*.html")):
         out = ROOT / src.name
         html = render(src)
+        found = sorted(set(PLACEHOLDER.findall(html)))
+        if found:
+            pending[src.name] = found
         current = out.read_text(encoding="utf-8") if out.exists() else None
         if current == html:
             print(f"  = {src.name}")
@@ -76,6 +83,10 @@ def main() -> None:
         else:
             out.write_text(html, encoding="utf-8")
             print(f"  ✓ {src.name}")
+    for name, found in pending.items():
+        print(f"  ⚠ {name}: datos sin rellenar: {', '.join(found)}")
+    if pending and strict:
+        sys.exit("Hay datos sin rellenar: no se publica (quita --strict para publicar igualmente).")
     if stale:
         sys.exit("Ejecuta: python3 scripts/build_site.py")
 
