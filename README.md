@@ -27,6 +27,7 @@ index.html, 404.html, no-disponible.html   GENERADOS
 sw.js                            service worker: muestra no-disponible.html si GitHub da un error 5xx/429 o no hay conexión
 assets/                          favicon, iconos de la app y og.png (imagen para compartir en redes)
 site.webmanifest, robots.txt, sitemap.xml
+CNAME                            dominio propio: oidococinapp.com
 .github/workflows/pages.yml      genera y publica en GitHub Pages en cada push
 ```
 
@@ -66,7 +67,22 @@ El español está escrito en las plantillas y partials de `src/`. Cada texto tra
 
 El workflow `pages.yml` publica en GitHub Pages en cada push a `main` o a la rama de trabajo.
 Si el primer despliegue falla por permisos: **Settings → Pages → Source: GitHub Actions**.
-Dominio propio: **Settings → Pages → Custom domain** → `oidococinapp.com` y apunta el DNS a GitHub Pages.
+Dominio propio: el archivo `CNAME` (`oidococinapp.com`) se copia al sitio publicado. Con despliegue
+por GitHub Actions, GitHub no lee ese archivo para activar el dominio: hay que ponerlo una vez en
+**Settings → Pages → Custom domain** → `oidococinapp.com` y marcar **Enforce HTTPS** cuando aparezca.
+
+DNS en el proveedor del dominio:
+
+| Tipo | Nombre | Valor |
+|---|---|---|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
+| CNAME | `www` | `retuertographic.github.io` |
+
+`app.oidococinapp.com` (la app) es un subdominio aparte y apunta a donde esté alojada la app, no a GitHub Pages.
 
 ## Páginas de error
 
