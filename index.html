@@ -324,6 +324,9 @@ html[lang="es"] .l-en{display:none}
 .ftr__grid li a,.ftr__grid li button{text-decoration:none;display:inline-flex;align-items:center}
 .ftr__grid li a:hover,.ftr__grid li button:hover{text-decoration:underline;color:var(--bg)}
 .ftr__bot{border-top:1px solid #3A332B;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;padding-bottom:28px;font-size:13px}
+.ftr__sig{flex-basis:100%;margin:0;font-size:12px;line-height:1.6}
+.ftr__sig .nw{white-space:nowrap}
+.ftr .ftr__sig a{min-height:0;color:var(--bg)}
 
 /* Botón flotante de WhatsApp */
 .wa{position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:#1F8F4E;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px rgba(28,24,20,.25);z-index:40;transition:transform .15s}
@@ -772,8 +775,9 @@ html[lang="es"] .l-en{display:none}
     </div>
   </div>
   <div class="wrap ftr__bot">
-    <span>© <span id="year">2026</span> OídoCocina · <span data-i18n="footer.by">Un producto de Retuerto Graphic Design · Tenerife</span></span>
+    <span>© <span id="year">2026</span> OídoCocina</span>
     <span>oidococinapp.com</span>
+    <p class="ftr__sig"><span data-i18n="footer.dev">Desarrollado por</span> <a href="https://retuertographicdesign.com/" target="_blank" rel="noopener">Retuerto Graphic Design</a>. Ricardo Retuerto Barrera | Spain-Germany | <span class="nw">0034 922 971 723</span> · <span class="nw">0049 30 31878629</span></p>
   </div>
 </footer>
 
@@ -961,7 +965,7 @@ const EN = {
  "form.name":"Name","form.rest":"Restaurant","form.email":"Email","form.tel":"Phone","form.msg":"Tell us about your kitchen",
  "form.msgph":"How many pizzas on a busy day, how many waiters, what oven you have…",
  "form.priv":"I have read and accept the","form.privlink":"privacy policy","form.send":"Book a demo",
- "footer.by":"A Retuerto Graphic Design product · Tenerife","footer.legal":"Legal notice","footer.privacy":"Privacy","footer.cookies":"Cookies",
+ "footer.dev":"Developed by","footer.legal":"Legal notice","footer.privacy":"Privacy","footer.cookies":"Cookies",
  "footer.tag":"Real-time orders and kitchen display for pizzerias and kitchens that cook in batches.","footer.h1":"Product","footer.h2":"Contact","footer.h3":"Legal","footer.calc":"Calculator","footer.app":"Open the app","footer.cookieset":"Cookie settings"
 };
 const MSG = {
